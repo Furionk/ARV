@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.10
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AREA.ARV.Plugins", "AREA.ARV.Plugins.csproj", "{FE48EA9F-D6CC-51FD-B835-51C2F7C9A939}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AREA.ARV", "AREA.ARV.csproj", "{B0545834-1755-6CE1-EDF2-3C12AFCB4FEE}"
