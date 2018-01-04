@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -463,7 +465,7 @@
     <Compile Include="Assets\Sources\Components\ResourcesComponent.cs" />
     <Compile Include="Assets\Sources\Components\ViewComponent.cs" />
     <Compile Include="Assets\Sources\FBScripts.cs" />
-    <Compile Include="Assets\Sources\FurionPlaneManager.cs" />
+    <Compile Include="Assets\Sources\ARManager.cs" />
     <Compile Include="Assets\Sources\GameController.cs" />
     <Compile Include="Assets\Sources\Generated\Components\Interfaces\IResources.cs" />
     <Compile Include="Assets\Sources\Generated\Components\Interfaces\IView.cs" />
@@ -504,6 +506,7 @@
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\A_piece_of_nature\Readme.txt" />
     <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\Emulator\VuforiaEmulator.xml" />

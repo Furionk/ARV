@@ -412,6 +412,7 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Editor\ZenUnityEditorUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\A_piece_of_nature\Readme.txt" />
     <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\Emulator\VuforiaEmulator.xml" />
