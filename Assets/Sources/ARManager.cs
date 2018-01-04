@@ -238,6 +238,7 @@ public class ARManager : MonoBehaviour {
     void OnDevicePoseStatusChanged(TrackableBehaviour.Status status) {
         if (status == TrackableBehaviour.Status.TRACKED) {
             
+
         }
         Debug.Log("OnDevicePoseStatusChanged(" + status.ToString() + ")");
     }
