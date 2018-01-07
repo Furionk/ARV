@@ -146,10 +146,10 @@ RectTransform:
   m_Father: {fileID: 1549438291}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 361.24, y: -37.073914}
-  m_SizeDelta: {x: 80.48, y: 36.76}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 36, y: 22}
+  m_SizeDelta: {x: 64, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162708568
 MonoBehaviour:
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_PlaneAugmentation: {fileID: 737642610}
   m_OnScreenMessage: {fileID: 1304771013}
   m_GroundReticle: {fileID: 663401711}
+  m_confirmButton: {fileID: 1336269301}
 --- !u!4 &359723265
 Transform:
   m_ObjectHideFlags: 0
@@ -827,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1336269302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1123,7 +1124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1547052912
 RectTransform:
   m_ObjectHideFlags: 0

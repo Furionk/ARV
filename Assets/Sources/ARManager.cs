@@ -20,6 +20,7 @@ public class ARManager : MonoBehaviour {
     public GameObject m_PlaneAugmentation;
     public UnityEngine.UI.Text m_OnScreenMessage;
     public CanvasGroup m_GroundReticle;
+    public GameObject m_confirmButton;
     #endregion // PUBLIC_MEMBERS
 
 
@@ -32,8 +33,6 @@ public class ARManager : MonoBehaviour {
     Camera mainCamera;
     int AutomaticHitTestFrameCount;
     PlaneMode planeMode = PlaneMode.GROUND;
-    Sprite m_IconGroundMode;
-    Sprite m_IconMidAirMode;
     const string TITLE_GROUNDPLANE = "Ground Plane";
     const string TITLE_MIDAIR = "Mid-Air";
     #endregion // PRIVATE_MEMBERS
@@ -49,10 +48,6 @@ public class ARManager : MonoBehaviour {
         DeviceTrackerARController.Instance.RegisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
 
         m_PlaneFinder.HitTestMode = HitTestMode.AUTOMATIC;
-
-        m_IconGroundMode = Resources.Load<Sprite>("icon_ground_mode");
-        m_IconMidAirMode = Resources.Load<Sprite>("icon_midair_mode");
-
         mainCamera = Camera.main;
     }
 
@@ -238,7 +233,6 @@ public class ARManager : MonoBehaviour {
     void OnDevicePoseStatusChanged(TrackableBehaviour.Status status) {
         if (status == TrackableBehaviour.Status.TRACKED) {
             
-
         }
         Debug.Log("OnDevicePoseStatusChanged(" + status.ToString() + ")");
     }
