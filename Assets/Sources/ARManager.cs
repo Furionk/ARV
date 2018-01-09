@@ -19,7 +19,7 @@ public class ARManager : MonoBehaviour {
 
     #region PUBLIC_MEMBERS
     public PlaneFinderBehaviour m_PlaneFinder;
-    public GameObject m_PlaneAugmentation;
+    public GameObject m_ARArea;
     public UnityEngine.UI.Text m_OnScreenMessage;
     public GameObject m_Toolbox;
     public CanvasGroup m_GroundReticle;
@@ -33,14 +33,17 @@ public class ARManager : MonoBehaviour {
     GameObject m_PlaneAnchor;
     AnchorBehaviour[] anchorBehaviours;
     StateManager stateManager;
-    Camera mainCamera;
     int AutomaticHitTestFrameCount;
-    const string TITLE_GROUNDPLANE = "Ground Plane";
-    const string TITLE_MIDAIR = "Mid-Air";
+    private Camera mainCamera;
+
     #endregion // PRIVATE_MEMBERS
 
 
     #region MONOBEHAVIOUR_METHODS
+
+    void Awake() {
+        Reset();
+    }
 
     void Start() {
         Debug.Log("Start() called.");
@@ -53,21 +56,6 @@ public class ARManager : MonoBehaviour {
         mainCamera = Camera.main;
     }
 
-    void LateUpdate() {
-        if (AutomaticHitTestFrameCount == Time.frameCount) {
-            // We got an automatic hit test this frame
-            m_GroundReticle.alpha = 0; // hide the onscreen reticle
-            m_OnScreenMessage.enabled = false; // hide the onscreen message
-            m_Toolbox.SetActive(true);
-            SetSurfaceIndicatorVisible(true); // display the surface indicator
-        } else {
-            // No automatic hit test, so set alpha based on which plane mode is active
-            // m_GroundReticle.alpha = (planeMode == PlaneMode.GROUND) ? 1 : 0;
-            m_Toolbox.SetActive(false);
-            m_OnScreenMessage.enabled = true;
-            SetSurfaceIndicatorVisible(false);
-        }
-    }
 
     void OnDestroy() {
         Debug.Log("OnDestroy() called.");
@@ -76,6 +64,26 @@ public class ARManager : MonoBehaviour {
         VuforiaARController.Instance.UnregisterOnPauseCallback(OnVuforiaPaused);
         DeviceTrackerARController.Instance.UnregisterTrackerStartedCallback(OnTrackerStarted);
         DeviceTrackerARController.Instance.UnregisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
+    }
+
+
+
+    void LateUpdate() {
+        if (AutomaticHitTestFrameCount == Time.frameCount) {
+            // We got an automatic hit test this frame
+            m_GroundReticle.alpha = 0; // hide the onscreen reticle
+            m_OnScreenMessage.enabled = false; // hide the onscreen message
+            m_Toolbox.SetActive(true);
+            SetSurfaceIndicatorVisible(true); // display the surface indicator
+            m_ARArea.SetActive(true);
+        } else {
+            // No automatic hit test, so set alpha based on which plane mode is active
+            // m_GroundReticle.alpha = (planeMode == PlaneMode.GROUND) ? 1 : 0;
+            m_Toolbox.SetActive(false);
+            m_OnScreenMessage.enabled = true;
+            m_ARArea.SetActive(false);
+            SetSurfaceIndicatorVisible(false);
+        }
     }
 
     #endregion // MONOBEHAVIOUR_METHODS
@@ -111,34 +119,6 @@ public class ARManager : MonoBehaviour {
             r.enabled = isVisible;
     }
 
-    private void DestroyAnchors() {
-        IEnumerable<TrackableBehaviour> trackableBehaviours = stateManager.GetActiveTrackableBehaviours();
-
-        string destroyed = "Destroying: ";
-
-        foreach (TrackableBehaviour behaviour in trackableBehaviours) {
-            if (behaviour is AnchorBehaviour) {
-                // First determine which mode (Plane or MidAir) and then delete only the anchors for that mode
-                // Leave the other mode's anchors intact
-                // PlaneAnchor_<GUID>
-                // Mid AirAnchor_<GUID>
-
-                if ((behaviour.Trackable.Name.Contains("PlaneAnchor"))) {
-                    destroyed +=
-                        "\nGObj Name: " + behaviour.name +
-                       "\nTrackable Name: " + behaviour.Trackable.Name +
-                       "\nTrackable ID: " + behaviour.Trackable.ID +
-                       "\nPosition: " + behaviour.transform.position.ToString();
-
-                    stateManager.DestroyTrackableBehavioursForTrackable(behaviour.Trackable);
-                    stateManager.ReassociateTrackables();
-                }
-            }
-        }
-
-        Debug.Log(destroyed);
-    }
-
     private void RotateTowardCamera(GameObject augmentation) {
         var lookAtPosition = mainCamera.transform.position - augmentation.transform.position;
         lookAtPosition.y = 0;
@@ -156,40 +136,11 @@ public class ARManager : MonoBehaviour {
 
     }
 
-    public void HandleInteractiveHitTest(HitTestResult result) {
-        Debug.Log("HandleInteractiveHitTest() called.");
-
-        if (result == null) {
-            Debug.LogError("Invalid hit test result!");
-            return;
-        }
-
-        // Place object based on Ground Plane mode
-        if (positionalDeviceTracker != null && positionalDeviceTracker.IsActive) {
-            DestroyAnchors();
-
-            contentPositioningBehaviour = m_PlaneFinder.GetComponent<ContentPositioningBehaviour>();
-            contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
-        }
-
-        if (!m_PlaneAugmentation.activeInHierarchy) {
-            Debug.Log("Setting Plane Augmentation to Active");
-            // On initial run, unhide the augmentation
-            m_PlaneAugmentation.SetActive(true);
-        }
-
-        Debug.Log("Positioning Plane Augmentation at: " + result.Position);
-        m_PlaneAugmentation.PositionAt(result.Position);
-        RotateTowardCamera(m_PlaneAugmentation);
-    }
-
     public void Reset() {
         Debug.Log("Reset() called.");
-
-        // reset augmentations
-        m_PlaneAugmentation.transform.position = Vector3.zero;
-        m_PlaneAugmentation.transform.localEulerAngles = Vector3.zero;
-        m_PlaneAugmentation.SetActive(false);
+        m_ARArea.transform.position = Vector3.zero;
+        m_ARArea.transform.localEulerAngles = Vector3.zero;
+        m_ARArea.SetActive(false);
     }
 
     #endregion // PUBLIC_METHODS
@@ -218,4 +169,62 @@ public class ARManager : MonoBehaviour {
     }
 
     #endregion // DEVICE_TRACKER_CALLBACK_METHODS
+
+
+    //////////public void HandleInteractiveHitTest(HitTestResult result) {
+    //////////    Debug.Log("HandleInteractiveHitTest() called.");
+
+    //////////    if (result == null) {
+    //////////        Debug.LogError("Invalid hit test result!");
+    //////////        return;
+    //////////    }
+
+    //////////    // Place object based on Ground Plane mode
+    //////////    if (positionalDeviceTracker != null && positionalDeviceTracker.IsActive) {
+    //////////        DestroyAnchors();
+
+    //////////        contentPositioningBehaviour = m_PlaneFinder.GetComponent<ContentPositioningBehaviour>();
+    //////////        contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
+    //////////    }
+
+    //////////    if (!m_ARArea.activeInHierarchy) {
+    //////////        Debug.Log("Setting Plane Augmentation to Active");
+    //////////        // On initial run, unhide the augmentation
+    //////////        m_ARArea.SetActive(true);
+    //////////    }
+
+    //////////    Debug.Log("Positioning Plane Augmentation at: " + result.Position);
+    //////////    m_ARArea.PositionAt(result.Position);
+    //////////    RotateTowardCamera(m_ARArea);
+    //////////}
+    /// 
+
+    //////////private void DestroyAnchors() {
+    //////////    IEnumerable<TrackableBehaviour> trackableBehaviours = stateManager.GetActiveTrackableBehaviours();
+
+    //////////    string destroyed = "Destroying: ";
+
+    //////////    foreach (TrackableBehaviour behaviour in trackableBehaviours) {
+    //////////        if (behaviour is AnchorBehaviour) {
+    //////////            // First determine which mode (Plane or MidAir) and then delete only the anchors for that mode
+    //////////            // Leave the other mode's anchors intact
+    //////////            // PlaneAnchor_<GUID>
+    //////////            // Mid AirAnchor_<GUID>
+
+    //////////            if ((behaviour.Trackable.Name.Contains("PlaneAnchor"))) {
+    //////////                destroyed +=
+    //////////                    "\nGObj Name: " + behaviour.name +
+    //////////                    "\nTrackable Name: " + behaviour.Trackable.Name +
+    //////////                    "\nTrackable ID: " + behaviour.Trackable.ID +
+    //////////                    "\nPosition: " + behaviour.transform.position.ToString();
+
+    //////////                stateManager.DestroyTrackableBehavioursForTrackable(behaviour.Trackable);
+    //////////                stateManager.ReassociateTrackables();
+    //////////            }
+    //////////        }
+    //////////    }
+
+    //////////    Debug.Log(destroyed);
+    //////////}
+
 }

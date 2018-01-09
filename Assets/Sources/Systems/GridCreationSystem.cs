@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Entitas;
+using Entitas.Unity;
 using Vuforia;
 using Zenject;
 
@@ -34,7 +35,7 @@ public class GridCreationSystem : ReactiveSystem<GameEntity> {
         foreach (var gameEntity in entities) {
             var nGrid = GameObject.Instantiate(_pGrid, _center.transform);
             nGrid.transform.position = gameEntity.grid.position * offset;
-
+            nGrid.Link(gameEntity, _gameContext);
         }
     }
 

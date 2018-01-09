@@ -8,7 +8,10 @@ using Zenject;
 public class SceneLoadUtility : MonoBehaviour {
 
     [Inject]
-    public GameContext _gameContext;
+    private GameContext _gameContext;
+
+    [Inject]
+    private DiContainer _container;
 
     public void Awake() {
         StartCoroutine("DirectLoad", SceneManager.GetActiveScene().name);
@@ -53,7 +56,7 @@ public class SceneLoadUtility : MonoBehaviour {
     public void AfterProcess(string targetScene) {
         Debug.Log("[LOAD] AFT process " + targetScene);
         if (targetScene == "Design") {
-            GameObject.Instantiate(Resources.Load<GameObject>("ARCamera"));
+            _container.InstantiatePrefab(Resources.Load<GameObject>("ARCamera"));
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     for (int k = 0; k < 3; k++) {
