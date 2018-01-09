@@ -490,11 +490,13 @@
     <Compile Include="Assets\Sources\Generated\Input\InputEntity.cs" />
     <Compile Include="Assets\Sources\Generated\Input\InputMatcher.cs" />
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
+    <Compile Include="Assets\Sources\RotationTest.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
     <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
     <Compile Include="Assets\Sources\Systems\Features\Interaction.cs" />
     <Compile Include="Assets\Sources\Systems\GameInitSystem.cs" />
     <Compile Include="Assets\Sources\Systems\GameModeSystem.cs" />
+    <Compile Include="Assets\Sources\Systems\GridCreationSystem.cs" />
     <Compile Include="Assets\Sources\Systems\InputLogSystem.cs" />
     <Compile Include="Assets\Sources\Systems\InputSystem.cs" />
     <Compile Include="Assets\Sources\Systems\MenuButtonHandlingSystem.cs" />
@@ -512,7 +514,7 @@
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
     <None Include="Assets\Editor\WebcamProfiles\profiles.xml" />
     <None Include="Assets\FacebookSDK\link.xml" />
-    <None Include="Assets\Models\A_piece_of_nature\Readme.txt" />
+    <None Include="Assets\GO\Models\A_piece_of_nature\Readme.txt" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Zenject\LICENSE.txt" />

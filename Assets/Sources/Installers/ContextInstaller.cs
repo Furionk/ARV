@@ -21,6 +21,7 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<SceneManagementSystem>().To<SceneManagementSystem>().AsSingle();
         Container.Bind<MenuButtonHandlingSystem>().To<MenuButtonHandlingSystem>().AsSingle();
         Container.Bind<GameModeSystem>().To<GameModeSystem>().AsSingle();
+        Container.Bind<GridCreationSystem>().To<GridCreationSystem>().AsSingle();
 
         // Features
         Container.Bind<Feature>().To<GameFlow>().AsSingle();

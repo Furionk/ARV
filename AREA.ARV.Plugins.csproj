@@ -678,7 +678,7 @@
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
     <None Include="Assets\Editor\WebcamProfiles\profiles.xml" />
     <None Include="Assets\FacebookSDK\link.xml" />
-    <None Include="Assets\Models\A_piece_of_nature\Readme.txt" />
+    <None Include="Assets\GO\Models\A_piece_of_nature\Readme.txt" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Zenject\LICENSE.txt" />

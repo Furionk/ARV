@@ -9,6 +9,7 @@ public class GameFlow : Feature {
         Add(container.Resolve<SceneManagementSystem>());
         Add(container.Resolve<GameInitSystem>());
         Add(container.Resolve<GameModeSystem>());
+        Add(container.Resolve<GridCreationSystem>());
     }
 
 }

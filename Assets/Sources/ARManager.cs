@@ -9,11 +9,15 @@ countries.
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
+using Zenject;
 
 public class ARManager : MonoBehaviour {
     private enum PlaneMode {
         GROUND,
     }
+
+    [Inject]
+    private GameContext _gameContext;
 
     #region PUBLIC_MEMBERS
     public PlaneFinderBehaviour m_PlaneFinder;
@@ -232,7 +236,7 @@ public class ARManager : MonoBehaviour {
 
     void OnDevicePoseStatusChanged(TrackableBehaviour.Status status) {
         if (status == TrackableBehaviour.Status.TRACKED) {
-            
+
         }
         Debug.Log("OnDevicePoseStatusChanged(" + status.ToString() + ")");
     }

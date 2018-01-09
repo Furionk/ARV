@@ -3,8 +3,12 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Vuforia;
+using Zenject;
 
 public class SceneLoadUtility : MonoBehaviour {
+
+    [Inject]
+    public GameContext _gameContext;
 
     public void Awake() {
         StartCoroutine("DirectLoad", SceneManager.GetActiveScene().name);
@@ -50,6 +54,13 @@ public class SceneLoadUtility : MonoBehaviour {
         Debug.Log("[LOAD] AFT process " + targetScene);
         if (targetScene == "Design") {
             GameObject.Instantiate(Resources.Load<GameObject>("ARCamera"));
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    for (int k = 0; k < 3; k++) {
+                        _gameContext.CreateEntity().AddGrid(new Vector3(i, j, k));
+                    }
+                }
+            }
         }
     }
 
