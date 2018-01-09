@@ -13,6 +13,9 @@ public class GridCreationSystem : ReactiveSystem<GameEntity> {
     private GameObject _pGrid;
     private GameObject _center;
 
+    [Inject(Id = "Offset")]
+    private float offset;
+
     public GridCreationSystem(GameContext context) : base(context) {
         _gameContext = context;
         _pGrid = Resources.Load<GameObject>("Game/Grid");
@@ -29,7 +32,9 @@ public class GridCreationSystem : ReactiveSystem<GameEntity> {
 
     protected override void Execute(List<GameEntity> entities) {
         foreach (var gameEntity in entities) {
-            GameObject.Instantiate(_pGrid, gameEntity.grid.position * 0.1f, Quaternion.identity, _center.transform);
+            var nGrid = GameObject.Instantiate(_pGrid, _center.transform);
+            nGrid.transform.position = gameEntity.grid.position * offset;
+
         }
     }
 

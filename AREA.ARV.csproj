@@ -489,8 +489,8 @@
     <Compile Include="Assets\Sources\Generated\Input\InputContext.cs" />
     <Compile Include="Assets\Sources\Generated\Input\InputEntity.cs" />
     <Compile Include="Assets\Sources\Generated\Input\InputMatcher.cs" />
+    <Compile Include="Assets\Sources\Installers\ConfigInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
-    <Compile Include="Assets\Sources\RotationTest.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
     <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
     <Compile Include="Assets\Sources\Systems\Features\Interaction.cs" />

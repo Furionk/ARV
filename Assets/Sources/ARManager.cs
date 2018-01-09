@@ -7,14 +7,12 @@ countries.
 ===============================================================================*/
 
 using System.Collections.Generic;
+using Entitas.Unity;
 using UnityEngine;
 using Vuforia;
 using Zenject;
 
 public class ARManager : MonoBehaviour {
-    private enum PlaneMode {
-        GROUND,
-    }
 
     [Inject]
     private GameContext _gameContext;
@@ -23,6 +21,7 @@ public class ARManager : MonoBehaviour {
     public PlaneFinderBehaviour m_PlaneFinder;
     public GameObject m_PlaneAugmentation;
     public UnityEngine.UI.Text m_OnScreenMessage;
+    public GameObject m_Toolbox;
     public CanvasGroup m_GroundReticle;
     public GameObject m_confirmButton;
     #endregion // PUBLIC_MEMBERS
@@ -36,7 +35,6 @@ public class ARManager : MonoBehaviour {
     StateManager stateManager;
     Camera mainCamera;
     int AutomaticHitTestFrameCount;
-    PlaneMode planeMode = PlaneMode.GROUND;
     const string TITLE_GROUNDPLANE = "Ground Plane";
     const string TITLE_MIDAIR = "Mid-Air";
     #endregion // PRIVATE_MEMBERS
@@ -60,15 +58,13 @@ public class ARManager : MonoBehaviour {
             // We got an automatic hit test this frame
             m_GroundReticle.alpha = 0; // hide the onscreen reticle
             m_OnScreenMessage.enabled = false; // hide the onscreen message
+            m_Toolbox.SetActive(true);
             SetSurfaceIndicatorVisible(true); // display the surface indicator
         } else {
             // No automatic hit test, so set alpha based on which plane mode is active
-            m_GroundReticle.alpha = (planeMode == PlaneMode.GROUND) ? 1 : 0;
-
-            if (planeMode == PlaneMode.GROUND) {
-                m_OnScreenMessage.enabled = true;
-                m_OnScreenMessage.text = "Point device towards ground";
-            }
+            // m_GroundReticle.alpha = (planeMode == PlaneMode.GROUND) ? 1 : 0;
+            m_Toolbox.SetActive(false);
+            m_OnScreenMessage.enabled = true;
             SetSurfaceIndicatorVisible(false);
         }
     }
@@ -127,7 +123,7 @@ public class ARManager : MonoBehaviour {
                 // PlaneAnchor_<GUID>
                 // Mid AirAnchor_<GUID>
 
-                if ((behaviour.Trackable.Name.Contains("PlaneAnchor") && planeMode == PlaneMode.GROUND)) {
+                if ((behaviour.Trackable.Name.Contains("PlaneAnchor"))) {
                     destroyed +=
                         "\nGObj Name: " + behaviour.name +
                        "\nTrackable Name: " + behaviour.Trackable.Name +
@@ -169,43 +165,23 @@ public class ARManager : MonoBehaviour {
         }
 
         // Place object based on Ground Plane mode
-        switch (planeMode) {
-            case PlaneMode.GROUND:
+        if (positionalDeviceTracker != null && positionalDeviceTracker.IsActive) {
+            DestroyAnchors();
 
-                if (positionalDeviceTracker != null && positionalDeviceTracker.IsActive) {
-                    DestroyAnchors();
-
-                    contentPositioningBehaviour = m_PlaneFinder.GetComponent<ContentPositioningBehaviour>();
-                    contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
-                }
-
-                if (!m_PlaneAugmentation.activeInHierarchy) {
-                    Debug.Log("Setting Plane Augmentation to Active");
-                    // On initial run, unhide the augmentation
-                    m_PlaneAugmentation.SetActive(true);
-                }
-
-                Debug.Log("Positioning Plane Augmentation at: " + result.Position);
-                m_PlaneAugmentation.PositionAt(result.Position);
-                RotateTowardCamera(m_PlaneAugmentation);
-
-                break;
-
-            default:
-                Debug.LogError("Invalid Ground Plane state: " + planeMode);
-                break;
+            contentPositioningBehaviour = m_PlaneFinder.GetComponent<ContentPositioningBehaviour>();
+            contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
         }
-    }
 
-
-
-    public void SetGroundMode(bool active) {
-        if (active) {
-            planeMode = PlaneMode.GROUND;
-            m_PlaneFinder.gameObject.SetActive(true);
+        if (!m_PlaneAugmentation.activeInHierarchy) {
+            Debug.Log("Setting Plane Augmentation to Active");
+            // On initial run, unhide the augmentation
+            m_PlaneAugmentation.SetActive(true);
         }
-    }
 
+        Debug.Log("Positioning Plane Augmentation at: " + result.Position);
+        m_PlaneAugmentation.PositionAt(result.Position);
+        RotateTowardCamera(m_PlaneAugmentation);
+    }
 
     public void Reset() {
         Debug.Log("Reset() called.");
