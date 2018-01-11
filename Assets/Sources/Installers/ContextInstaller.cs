@@ -17,11 +17,12 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<InputSystem>().To<InputSystem>().AsSingle();
         Container.Bind<InputLogSystem>().To<InputLogSystem>().AsSingle();
         Container.Bind<GameInitSystem>().To<GameInitSystem>().AsSingle();
-        Container.Bind<ViewCreationSystem>().To<ViewCreationSystem>().AsSingle();
+        Container.Bind<GameViewCreationSystem>().To<GameViewCreationSystem>().AsSingle();
         Container.Bind<SceneManagementSystem>().To<SceneManagementSystem>().AsSingle();
         Container.Bind<MenuButtonHandlingSystem>().To<MenuButtonHandlingSystem>().AsSingle();
         Container.Bind<GameModeSystem>().To<GameModeSystem>().AsSingle();
-        Container.Bind<GridCreationSystem>().To<GridCreationSystem>().AsSingle();
+        Container.Bind<GridPositioningSystem>().To<GridPositioningSystem>().AsSingle();
+        Container.Bind<GridSelectionSystem>().To<GridSelectionSystem>().AsSingle();
 
         // Features
         Container.Bind<Feature>().To<GameFlow>().AsSingle();

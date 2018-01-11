@@ -10,16 +10,22 @@ public static class GameComponentsLookup {
 
     public const int GameMode = 0;
     public const int Grid = 1;
-    public const int OnSceneLoad = 2;
-    public const int Part = 3;
-    public const int Resources = 4;
-    public const int View = 5;
+    public const int Id = 2;
+    public const int IsSelected = 3;
+    public const int OnGridCreated = 4;
+    public const int OnSceneLoad = 5;
+    public const int Part = 6;
+    public const int Resources = 7;
+    public const int View = 8;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "GameMode",
         "Grid",
+        "Id",
+        "IsSelected",
+        "OnGridCreated",
         "OnSceneLoad",
         "Part",
         "Resources",
@@ -29,6 +35,9 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(GameModeComponent),
         typeof(GridComponent),
+        typeof(IdComponent),
+        typeof(IsSelectedComponent),
+        typeof(OnGridCreatedComponent),
         typeof(OnSceneLoadComponent),
         typeof(PartComponent),
         typeof(ResourcesComponent),

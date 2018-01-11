@@ -60,10 +60,13 @@ public class SceneLoadUtility : MonoBehaviour {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     for (int k = 0; k < 3; k++) {
-                        _gameContext.CreateEntity().AddGrid(new Vector3(i, j, k));
+                        var ge = _gameContext.CreateEntity();
+                        ge.AddResources("Game/Grid");
+                        ge.AddGrid(new Vector3(i, j, k));
                     }
                 }
             }
+            _gameContext.CreateEntity().AddOnGridCreated(null);
         }
     }
 

@@ -9,9 +9,14 @@ public class ARCursor : MonoBehaviour {
     [Inject(Id = "GridLayer")]
     private LayerMask _gridLayerMask;
 
+    [Inject(Id = "DetectDistance")]
+    private float _detectDistance;
+
     [Inject]
     private GameContext _gameContext;
 
+
+    private int _lastTargetEntityIndex = -1;
     private Vector3 _screenCenter;
     private Material _mGridSelected;
 
@@ -22,21 +27,31 @@ public class ARCursor : MonoBehaviour {
     }
 
     void Update() {
-
+        int maxHitInfoIndex = -1;
         Ray hitRay = Camera.main.ScreenPointToRay(_screenCenter);
         Debug.DrawRay(hitRay.origin, hitRay.direction, Color.yellow, 1f);
-        RaycastHit[] hitInfo = Physics.RaycastAll(hitRay, 5, _gridLayerMask);
+        RaycastHit[] hitInfo = Physics.RaycastAll(hitRay, _detectDistance, _gridLayerMask);
+        Vector3 maxDisVec = Vector3.zero;
+        Vector3 cameraPosition = this.transform.position;
         if (hitInfo.Length > 0) {
             for (int i = 0;i < hitInfo.Length;i++) {
-                Debug.Log("HIT!");
-                GameEntity ge = hitInfo[i].transform.gameObject.GetEntityLink().entity as GameEntity;
-                if (ge.hasGrid) {
-
-                    hitInfo[i].transform.GetComponent<MeshRenderer>().material = _mGridSelected;
-
-
+                Vector3 currentDisVec = hitInfo[i].transform.position - cameraPosition;
+                if (currentDisVec.magnitude > maxDisVec.magnitude) {
+                    maxDisVec = currentDisVec;
+                    maxHitInfoIndex = i;
                 }
             }
+        }
+        if (maxHitInfoIndex != -1) {
+            int targetIndex = hitInfo[maxHitInfoIndex].transform.gameObject.GetEntityLink().entity.creationIndex;
+            if (_lastTargetEntityIndex != targetIndex) {
+                if (_lastTargetEntityIndex != -1 && _gameContext.GetEntityWithId(_lastTargetEntityIndex).hasIsSelected) {
+                    _gameContext.GetEntityWithId(_lastTargetEntityIndex).RemoveIsSelected();
+                }
+                _gameContext.GetEntityWithId(targetIndex).AddIsSelected(0);
+                _lastTargetEntityIndex = targetIndex;
+            }
+
 
         }
 

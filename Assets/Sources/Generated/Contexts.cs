@@ -59,6 +59,7 @@ public partial class Contexts : Entitas.IContexts {
 public partial class Contexts {
 
     public const string Grid = "Grid";
+    public const string Id = "Id";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
@@ -66,6 +67,15 @@ public partial class Contexts {
             Grid,
             game.GetGroup(GameMatcher.Grid),
             (e, c) => ((GridComponent)c).position));
+
+        input.AddEntityIndex(new Entitas.PrimaryEntityIndex<InputEntity, int>(
+            Id,
+            input.GetGroup(InputMatcher.Id),
+            (e, c) => ((IdComponent)c).Id));
+        game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
+            Id,
+            game.GetGroup(GameMatcher.Id),
+            (e, c) => ((IdComponent)c).Id));
     }
 }
 
@@ -73,6 +83,14 @@ public static class ContextsExtensions {
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithGrid(this GameContext context, UnityEngine.Vector3 position) {
         return ((Entitas.EntityIndex<GameEntity, UnityEngine.Vector3>)context.GetEntityIndex(Contexts.Grid)).GetEntities(position);
+    }
+
+    public static InputEntity GetEntityWithId(this InputContext context, int Id) {
+        return ((Entitas.PrimaryEntityIndex<InputEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Id);
+    }
+
+    public static GameEntity GetEntityWithId(this GameContext context, int Id) {
+        return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Id);
     }
 }
 //------------------------------------------------------------------------------
