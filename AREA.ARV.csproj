@@ -468,6 +468,7 @@
     <Compile Include="Assets\Sources\Components\IsSelectedComponent.cs" />
     <Compile Include="Assets\Sources\Components\PartComponent.cs" />
     <Compile Include="Assets\Sources\Components\ResourcesComponent.cs" />
+    <Compile Include="Assets\Sources\Components\VehiclePartComponent.cs" />
     <Compile Include="Assets\Sources\Components\ViewComponent.cs" />
     <Compile Include="Assets\Sources\FBScripts.cs" />
     <Compile Include="Assets\Sources\GameController.cs" />
