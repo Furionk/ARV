@@ -26,10 +26,12 @@ public class MenuButtonHandlingSystem : ReactiveSystem<InputEntity>, ICleanupSys
 
     protected override void Execute(List<InputEntity> entities) {
         foreach (var inputEntity in entities) {
-            Debug.Log(inputEntity.onMenuButtonDown.buttonId);
-            if (inputEntity.onMenuButtonDown.buttonId == "NEXT") {
+            var buttonId = inputEntity.onMenuButtonDown.buttonId;
+            Debug.Log(buttonId);
+            if (buttonId == "NEXT") {
                 _gameContext.ReplaceGameMode(GameMode.Design);
-            } else if (inputEntity.onMenuButtonDown.buttonId == "BACK") {
+            } else if (buttonId == "BACK") {
+                _gameContext.ReplaceGameMode(GameMode.Menu);
                 _gameContext.ReplaceGameMode(GameMode.Menu);
             }
         }

@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377c7fc5967763044a915a1bb1c9d0d4, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  offset: 0.11
+  offset: 0.03
   gridLayer:
     serializedVersion: 2
     m_Bits: 256
-  detectDistance: 0.2
+  detectDistance: 0.25

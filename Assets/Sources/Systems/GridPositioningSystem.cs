@@ -11,14 +11,12 @@ using Zenject;
 public class GridPositioningSystem : ReactiveSystem<GameEntity> {
 
     private GameContext _gameContext;
-    private GameObject _center;
 
     [Inject(Id = "Offset")]
     private float offset;
 
     public GridPositioningSystem(GameContext context) : base(context) {
         _gameContext = context;
-        _center = GameObject.FindWithTag("Grid Center");
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
@@ -32,6 +30,8 @@ public class GridPositioningSystem : ReactiveSystem<GameEntity> {
     }
 
     protected override void Execute(List<GameEntity> entities) {
+        GameObject _center = GameObject.FindGameObjectWithTag("Grid Center");
+
         foreach (var gameEntity in entities) {
             gameEntity.Destroy();
         }
@@ -53,7 +53,8 @@ public class GridPositioningSystem : ReactiveSystem<GameEntity> {
         //foreach (var gameEntity in _gameContext.GetEntities(GameMatcher.AllOf(GameMatcher.Grid))) {
         //    gameEntity.view.view.transform.Translate(-1*maxX.Value/2, 0, -1*maxZ.Value/2);
         //}
-        _center.transform.Translate(-1 * maxX.Value / 2, 0, -1 * maxZ.Value / 2, Space.World);
+        //_center.transform.Translate(-1 * maxX.Value / 2, 0, -1 * maxZ.Value / 2, Space.World);
+        //_center.transform.position = new Vector3(_center.transform.position.x, 0.2f, _center.transform.position.z);
     }
 
 }

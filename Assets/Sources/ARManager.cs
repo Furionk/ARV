@@ -7,6 +7,7 @@ countries.
 ===============================================================================*/
 
 using System.Collections.Generic;
+using System.Linq;
 using Entitas.Unity;
 using UnityEngine;
 using Vuforia;
@@ -24,10 +25,14 @@ public class ARManager : MonoBehaviour {
     public GameObject m_Toolbox;
     public CanvasGroup m_GroundReticle;
     public GameObject m_confirmButton;
+    public GameObject m_resetButton;
     #endregion // PUBLIC_MEMBERS
 
 
     #region PRIVATE_MEMBERS
+
+    private bool arAreaConfirmed = false;
+    private bool arAreaInitialized = false;
     PositionalDeviceTracker positionalDeviceTracker;
     ContentPositioningBehaviour contentPositioningBehaviour;
     GameObject m_PlaneAnchor;
@@ -42,7 +47,9 @@ public class ARManager : MonoBehaviour {
     #region MONOBEHAVIOUR_METHODS
 
     void Awake() {
-        Reset();
+        //Reset();
+        m_confirmButton.SetActive(false);
+        m_resetButton.SetActive(false);
     }
 
     void Start() {
@@ -69,19 +76,28 @@ public class ARManager : MonoBehaviour {
 
 
     void LateUpdate() {
+        //////if (stateManager != null && arAreaConfirmed) {
+        //////    if (stateManager.GetActiveTrackableBehaviours().Count() == 0) {
+        //////        //Debug.Log("active: " + stateManager.GetActiveTrackableBehaviours().Count());
+        //////        Reset();
+        //////    }
+        //////}
+
+
+        if (arAreaConfirmed)
+            return;
+
         if (AutomaticHitTestFrameCount == Time.frameCount) {
             // We got an automatic hit test this frame
             m_GroundReticle.alpha = 0; // hide the onscreen reticle
             m_OnScreenMessage.enabled = false; // hide the onscreen message
-            m_Toolbox.SetActive(true);
+            //m_ARArea.SetActive(true);
             SetSurfaceIndicatorVisible(true); // display the surface indicator
-            m_ARArea.SetActive(true);
         } else {
             // No automatic hit test, so set alpha based on which plane mode is active
             // m_GroundReticle.alpha = (planeMode == PlaneMode.GROUND) ? 1 : 0;
-            m_Toolbox.SetActive(false);
             m_OnScreenMessage.enabled = true;
-            m_ARArea.SetActive(false);
+            //m_ARArea.SetActive(false);
             SetSurfaceIndicatorVisible(false);
         }
     }
@@ -119,12 +135,6 @@ public class ARManager : MonoBehaviour {
             r.enabled = isVisible;
     }
 
-    private void RotateTowardCamera(GameObject augmentation) {
-        var lookAtPosition = mainCamera.transform.position - augmentation.transform.position;
-        lookAtPosition.y = 0;
-        var rotation = Quaternion.LookRotation(lookAtPosition);
-        augmentation.transform.rotation = rotation;
-    }
 
     #endregion // PRIVATE_METHODS
 
@@ -133,7 +143,10 @@ public class ARManager : MonoBehaviour {
     public void HandleAutomaticHitTest(HitTestResult result) {
         //Debug.Log("Result: " + result.Position);
         AutomaticHitTestFrameCount = Time.frameCount;
-
+        if (!arAreaConfirmed) {
+            m_confirmButton.SetActive(true);
+        }
+        
     }
 
     public void Reset() {
@@ -141,6 +154,33 @@ public class ARManager : MonoBehaviour {
         m_ARArea.transform.position = Vector3.zero;
         m_ARArea.transform.localEulerAngles = Vector3.zero;
         m_ARArea.SetActive(false);
+        m_confirmButton.SetActive(false);
+        arAreaConfirmed = false;
+    }
+
+    public void HandleConfirmed() {
+        arAreaConfirmed = true;
+        m_resetButton.SetActive(true);
+        m_confirmButton.SetActive(false);
+        m_ARArea.SetActive(true);
+        if (!arAreaInitialized) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    for (int k = 0; k < 3; k++) {
+                        var ge = _gameContext.CreateEntity();
+                        ge.AddResources("Game/Grid");
+                        ge.AddGrid(new Vector3(i, j, k));
+                    }
+                }
+            }
+            arAreaInitialized = true;
+        }
+        _gameContext.CreateEntity().AddOnGridCreated(null);
+        SetSurfaceIndicatorVisible(false);
+    }
+
+    public void HandleReset() {
+        Reset();
     }
 
     #endregion // PUBLIC_METHODS
@@ -163,12 +203,19 @@ public class ARManager : MonoBehaviour {
 
     void OnDevicePoseStatusChanged(TrackableBehaviour.Status status) {
         if (status == TrackableBehaviour.Status.TRACKED) {
-
+            
         }
         Debug.Log("OnDevicePoseStatusChanged(" + status.ToString() + ")");
     }
 
     #endregion // DEVICE_TRACKER_CALLBACK_METHODS
+
+    ////////private void RotateTowardCamera(GameObject augmentation) {
+    ////////    var lookAtPosition = mainCamera.transform.position - augmentation.transform.position;
+    ////////    lookAtPosition.y = 0;
+    ////////    var rotation = Quaternion.LookRotation(lookAtPosition);
+    ////////    augmentation.transform.rotation = rotation;
+    ////////}
 
 
     //////////public void HandleInteractiveHitTest(HitTestResult result) {
