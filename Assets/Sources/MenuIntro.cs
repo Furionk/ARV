@@ -8,11 +8,23 @@ public class MenuIntro : MonoBehaviour {
 
 
     [Inject(Id = "GlobalPanel")]
-    public RectTransform GlobalPanel;
+    private RectTransform _globalPanel;
+    private bool _animationPlayed;
+
+    void Awake() {
+        this.transform.localPosition = Vector3.zero;
+    }
+
+    public void HandleIntroAnimationPlayed() {
+        _animationPlayed = true;
+    }
 
     public void Update() {
         if (Input.anyKey) {
-            //Debug.Log(GlobalPanel == null);
+            if (_animationPlayed) {
+                _globalPanel.gameObject.SetActive(true);
+                this.gameObject.SetActive(false);
+            }
         }
 
     }

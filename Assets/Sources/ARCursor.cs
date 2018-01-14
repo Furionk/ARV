@@ -17,33 +17,32 @@ public class ARCursor : MonoBehaviour {
 
 
     private int _lastTargetEntityIndex = -1;
+    private int[] _lastMiddleEntityIndexs;
     private Vector3 _screenCenter;
-    private Material _mGridSelected;
 
     void Awake() {
         _screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
-        _mGridSelected = Resources.Load<Material>("Game/Grid Selected");
         Debug.Log("Screen center = " + _screenCenter);
     }
 
     void Update() {
-        int maxHitInfoIndex = -1;
+        int finalHitIndex = -1;
         Ray hitRay = Camera.main.ScreenPointToRay(_screenCenter);
         Debug.DrawRay(hitRay.origin, hitRay.direction, Color.yellow, 1f);
         RaycastHit[] hitInfo = Physics.RaycastAll(hitRay, _detectDistance, _gridLayerMask);
         Vector3 maxDisVec = Vector3.zero;
         Vector3 cameraPosition = this.transform.position;
         if (hitInfo.Length > 0) {
-            for (int i = 0;i < hitInfo.Length;i++) {
+            for (int i = 0; i < hitInfo.Length; i++) {
                 Vector3 currentDisVec = hitInfo[i].transform.position - cameraPosition;
                 if (currentDisVec.magnitude > maxDisVec.magnitude) {
                     maxDisVec = currentDisVec;
-                    maxHitInfoIndex = i;
+                    finalHitIndex = i;
                 }
             }
         }
-        if (maxHitInfoIndex != -1) {
-            int targetIndex = hitInfo[maxHitInfoIndex].transform.gameObject.GetEntityLink().entity.creationIndex;
+        if (finalHitIndex != -1) {
+            int targetIndex = hitInfo[finalHitIndex].transform.gameObject.GetEntityLink().entity.creationIndex;
             if (_lastTargetEntityIndex != targetIndex) {
                 if (_lastTargetEntityIndex != -1 && _gameContext.GetEntityWithId(_lastTargetEntityIndex).hasIsSelected) {
                     _gameContext.GetEntityWithId(_lastTargetEntityIndex).RemoveIsSelected();
@@ -52,10 +51,28 @@ public class ARCursor : MonoBehaviour {
                 _lastTargetEntityIndex = targetIndex;
             }
 
+            Vector3 disToTarget = hitInfo[finalHitIndex].transform.position - cameraPosition;
+            Collider[] insideInfo = Physics.OverlapSphere(hitRay.origin, disToTarget.sqrMagnitude, _gridLayerMask);
+            //RaycastHit[] insideInfo = Physics.SphereCastAll(hitRay, disToTarget.sqrMagnitude, 100, _gridLayerMask);
+            //RaycastHit[] insideInfo = Physics.BoxCastAll(hitRay.origin, (disToTarget / 2), hitRay.direction, Quaternion.identity, 100, _gridLayerMask);
+            //Gizmos.DrawCube(hitRay.origin, disToTarget/2);
+            if (insideInfo.Length > 0) {
+                Debug.Log("HIT" + insideInfo.Length);
+                for (int i = 0;
+                    i < insideInfo.Length;
+                    i++) {
+                    int index = insideInfo[i].transform.gameObject.GetEntityLink().entity.creationIndex;
 
+                    //_gameContext.GetEntityWithId(index).add
+                }
+            }
+
+        } else {
+            if (_lastTargetEntityIndex != -1) {
+                _gameContext.GetEntityWithId(_lastTargetEntityIndex).RemoveIsSelected();
+                _lastTargetEntityIndex = -1;
+            }
         }
-
-
 
     }
 

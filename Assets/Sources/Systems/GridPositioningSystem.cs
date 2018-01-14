@@ -53,8 +53,9 @@ public class GridPositioningSystem : ReactiveSystem<GameEntity> {
         //foreach (var gameEntity in _gameContext.GetEntities(GameMatcher.AllOf(GameMatcher.Grid))) {
         //    gameEntity.view.view.transform.Translate(-1*maxX.Value/2, 0, -1*maxZ.Value/2);
         //}
-        //_center.transform.Translate(-1 * maxX.Value / 2, 0, -1 * maxZ.Value / 2, Space.World);
-        //_center.transform.position = new Vector3(_center.transform.position.x, 0.2f, _center.transform.position.z);
+        _center.transform.Translate(-1 * maxX.Value / 2,0, -1 * maxZ.Value / 2, Space.World);
+        _center.transform.Translate(0,0.04f,0, Space.Self);
+        
     }
 
 }

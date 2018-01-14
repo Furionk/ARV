@@ -8,8 +8,14 @@ public class ButtonClickedHandler : MonoBehaviour {
     [Inject]
     private InputContext inputContext;
 
+    public string ButtonId;
+
     public void OnButtonClicked() {
-        inputContext.CreateEntity().AddOnMenuButtonDown(this.gameObject.name);
+        if (string.IsNullOrEmpty(ButtonId)) {
+            inputContext.CreateEntity().AddOnMenuButtonDown(this.gameObject.name);
+        } else {
+            inputContext.CreateEntity().AddOnMenuButtonDown(ButtonId);
+        }
     }
 
 }
