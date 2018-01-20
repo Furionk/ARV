@@ -434,8 +434,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Area730\UpdateManager\Editor\SimpleJSON.cs" />
-    <Compile Include="Assets\Area730\UpdateManager\Editor\UpdatesWindow.cs" />
     <Compile Include="Assets\Common\Editor\ConfigurePlayerSettings.cs" />
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Editor\Vuforia\SampleOrientationSetter.cs" />

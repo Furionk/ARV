@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>iOS:9</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -543,6 +545,7 @@
     <Compile Include="Assets\Sources\MenuController.cs" />
     <Compile Include="Assets\Sources\MenuIntro.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
+    <Compile Include="Assets\Sources\SoundController.cs" />
     <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
     <Compile Include="Assets\Sources\Systems\Features\Interaction.cs" />
     <Compile Include="Assets\Sources\Systems\GameInitSystem.cs" />

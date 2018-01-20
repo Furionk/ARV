@@ -28,12 +28,12 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<Feature>().To<GameFlow>().AsSingle();
         Container.Bind<Feature>().To<Interaction>().AsSingle();
 
-        // Entitas Core
+        // Entitas Core & Unity Utilities
         //Container.Bind<GameController>().FromComponentInNewPrefabResource("Bootstrap/GameController").AsSingle().NonLazy();
-        Container.Bind<GameController>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
-        // Unity Utilities
         //Container.Bind<SceneLoadUtility>().FromComponentInNewPrefabResource("Bootstrap/SceneLoader").AsSingle().NonLazy();
+        Container.Bind<GameController>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
         Container.Bind<SceneLoadUtility>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
+        Container.Bind<SoundController>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
 
         // FB Scripts
         //Container.Bind<FBScripts>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
