@@ -42,9 +42,9 @@ public class ButtonEventHandlingSystem : ReactiveSystem<InputEntity>, ICleanupSy
                 _gameContext.CreateEntity().AddGameMode(GameMode.Simulation);
             } else if (buttonId == "reset") {
                 // TODO : wait for optimize
-                GameObject.FindObjectOfType<ARManager>().Reset();
+                GameController.Instance.arManager.Value.Reset();
             } else if (buttonId == "toolbox") {
-                GameObject.FindObjectOfType<MenuController>().TogglePanel("pnl_toolbox");
+                GameController.Instance.menuController.Value.TogglePanel("pnl_toolbox");
             }
         }
     }

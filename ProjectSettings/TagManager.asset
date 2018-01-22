@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stage
   - Grid Center
+  - ToolboxViewport
   layers:
   - Default
   - TransparentFX

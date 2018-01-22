@@ -19,6 +19,8 @@ public class ARManager : MonoBehaviour {
     [Inject]
     private GameContext _gameContext;
 
+    private bool logging = false;
+
     #region PUBLIC_MEMBERS
     public PlaneFinderBehaviour m_PlaneFinder;
     public GameObject m_ARArea;
@@ -54,7 +56,7 @@ public class ARManager : MonoBehaviour {
     }
 
     void Start() {
-        Debug.Log("[ARMGR] Start() called.");
+        if (logging) Debug.Log("[ARMGR] Start() called.");
         VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
         VuforiaARController.Instance.RegisterOnPauseCallback(OnVuforiaPaused);
         DeviceTrackerARController.Instance.RegisterTrackerStartedCallback(OnTrackerStarted);
@@ -66,7 +68,7 @@ public class ARManager : MonoBehaviour {
 
 
     void OnDestroy() {
-        Debug.Log("[ARMGR] OnDestroy() called.");
+        if (logging) Debug.Log("[ARMGR] OnDestroy() called.");
 
         VuforiaARController.Instance.UnregisterVuforiaStartedCallback(OnVuforiaStarted);
         VuforiaARController.Instance.UnregisterOnPauseCallback(OnVuforiaPaused);
@@ -108,13 +110,13 @@ public class ARManager : MonoBehaviour {
     #region VUFORIA_CALLBACKS
 
     void OnVuforiaStarted() {
-        Debug.Log("[ARMGR] OnVuforiaStarted() called.");
+        if (logging) Debug.Log("[ARMGR] OnVuforiaStarted() called.");
 
         stateManager = TrackerManager.Instance.GetStateManager();
     }
 
     void OnVuforiaPaused(bool paused) {
-        Debug.Log("[ARMGR] OnVuforiaPaused(" + paused.ToString() + ") called.");
+        if (logging) Debug.Log("[ARMGR] OnVuforiaPaused(" + paused.ToString() + ") called.");
 
         if (paused)
             Reset();
@@ -151,7 +153,7 @@ public class ARManager : MonoBehaviour {
     }
 
     public void Reset() {
-        Debug.Log("[ARMGR] Reset() called.");
+        if (logging) Debug.Log("[ARMGR] Reset() called.");
         m_ARArea.transform.position = Vector3.zero;
         m_ARArea.transform.localEulerAngles = Vector3.zero;
         m_ARArea.SetActive(false);
@@ -186,7 +188,7 @@ public class ARManager : MonoBehaviour {
     #region DEVICE_TRACKER_CALLBACKS
 
     void OnTrackerStarted() {
-        Debug.Log("[ARMGR] OnTrackerStarted() called.");
+        if (logging) Debug.Log("[ARMGR] OnTrackerStarted() called.");
 
         positionalDeviceTracker = TrackerManager.Instance.GetTracker<PositionalDeviceTracker>();
 
@@ -194,7 +196,7 @@ public class ARManager : MonoBehaviour {
             if (!positionalDeviceTracker.IsActive)
                 positionalDeviceTracker.Start();
 
-            Debug.Log("[ARMGR] PositionalDeviceTracker is Active?: " + positionalDeviceTracker.IsActive);
+            if (logging) Debug.Log("[ARMGR] PositionalDeviceTracker is Active?: " + positionalDeviceTracker.IsActive);
         }
     }
 
@@ -202,7 +204,7 @@ public class ARManager : MonoBehaviour {
         if (status == TrackableBehaviour.Status.TRACKED) {
             
         }
-        Debug.Log("[ARMGR] OnDevicePoseStatusChanged(" + status.ToString() + ")");
+        if (logging) Debug.Log("[ARMGR] OnDevicePoseStatusChanged(" + status.ToString() + ")");
     }
 
     #endregion // DEVICE_TRACKER_CALLBACK_METHODS

@@ -23,6 +23,8 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<GameModeSystem>().To<GameModeSystem>().AsSingle();
         Container.Bind<GridPositioningSystem>().To<GridPositioningSystem>().AsSingle();
         Container.Bind<GridSelectionSystem>().To<GridSelectionSystem>().AsSingle();
+        Container.Bind<ToolboxViewCreationSystem>().To<ToolboxViewCreationSystem>().AsSingle();
+        Container.Bind<ToolboxManagementSystem>().To<ToolboxManagementSystem>().AsSingle();
 
         // Features
         Container.Bind<Feature>().To<GameFlow>().AsSingle();

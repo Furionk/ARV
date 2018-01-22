@@ -11,6 +11,9 @@ public class GameFlow : Feature {
         Add(container.Resolve<GameModeSystem>());
         Add(container.Resolve<GridPositioningSystem>());
         Add(container.Resolve<GridSelectionSystem>());
+
+        Add(container.Resolve<ToolboxViewCreationSystem>());
+        Add(container.Resolve<ToolboxManagementSystem>());
     }
 
 }

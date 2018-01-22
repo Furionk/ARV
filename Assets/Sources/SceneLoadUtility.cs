@@ -67,6 +67,20 @@ public class SceneLoadUtility : MonoBehaviour {
         if (targetScene == "Design") {
             _container.InstantiatePrefab(Resources.Load<GameObject>("ARCamera"));
         }
+        _gameContext.CreateEntity().AddVehiclePart("Wheel",Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("Wheel", Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("Wheel", Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("Wheel", Vector3.zero);
+
+        _gameContext.CreateEntity().AddVehiclePart("WoodBody", Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("WoodBody", Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("WoodBody", Vector3.zero);
+        _gameContext.CreateEntity().AddVehiclePart("WoodBody", Vector3.zero);
+
+        //_gameContext.CreateEntity().AddVehiclePart("WoodBody", Vector3.zero);
+
+        //_gameContext.CreateEntity().AddVehiclePart("EggBag", Vector3.zero);
+
 
     }
 

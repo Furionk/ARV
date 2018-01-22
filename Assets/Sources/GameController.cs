@@ -4,18 +4,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Entitas;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using Vuforia;
 using Zenject;
 
 public class GameController : MonoBehaviour {
 
-    [Inject]
-    public List<Feature> features;
-
     private Systems _systems;
 
+    [Inject]
+    public List<Feature> features;
+    public static GameController Instance;
+
+    [Inject]
+    public Lazy<ARManager> arManager;
+
+    [Inject]
+    public Lazy<MenuController> menuController;
+
+
     void Awake() {
+        Instance = this;
     }
 
     // Use this for initialization
@@ -33,7 +43,6 @@ public class GameController : MonoBehaviour {
             Debug.Log("[I] Feature Loaded: " + feature.ToString());
             _systems.Add(feature);
         }
-
         _systems.Initialize();
     }
 

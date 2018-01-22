@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>iOS:9</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -297,111 +295,6 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>Assets\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween43">
-      <HintPath>Assets\Demigiant\DOTween\DOTween43.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween50">
-      <HintPath>Assets\Demigiant\DOTween\DOTween50.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>Assets\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>Assets\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Logging">
-      <HintPath>Assets\Entitas\DesperateDevs.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Networking">
-      <HintPath>Assets\Entitas\DesperateDevs.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Serialization">
-      <HintPath>Assets\Entitas\DesperateDevs.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Utils">
-      <HintPath>Assets\Entitas\DesperateDevs.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.CodeGeneration.Attributes">
-      <HintPath>Assets\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas">
-      <HintPath>Assets\Entitas\Entitas.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity">
-      <HintPath>Assets\Entitas\Entitas.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity">
-      <HintPath>Assets\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Analytics">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.CodeGeneration.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.Plugins">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.Unity.Plugins">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.CodeGeneration.Unity.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Unity.Editor">
-      <HintPath>Assets\Entitas\Editor\DesperateDevs.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.CodeGeneration.Plugins">
-      <HintPath>Assets\Entitas\Editor\Entitas.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Migration">
-      <HintPath>Assets\Entitas\Editor\Entitas.Migration.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Migration.Unity.Editor">
-      <HintPath>Assets\Entitas\Editor\Entitas.Migration.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity.Editor">
-      <HintPath>Assets\Entitas\Editor\Entitas.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.CodeGeneration.Plugins">
-      <HintPath>Assets\Entitas\Editor\Entitas.VisualDebugging.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity.Editor">
-      <HintPath>Assets\Entitas\Editor\Entitas.VisualDebugging.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity">
-      <HintPath>Assets\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Editor">
-      <HintPath>Assets\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Gameroom">
-      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
-    </Reference>
-    <Reference Include="FacebookNamedPipeClient">
-      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Assets\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="Google.IOSResolver">
       <HintPath>Assets\PlayServicesResolver\Editor\Google.IOSResolver.dll</HintPath>
     </Reference>
@@ -414,11 +307,116 @@
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\PlayServicesResolver\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
-      <HintPath>Assets\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets\External\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+      <HintPath>Assets\External\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Assets\External\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiEditor">
+      <HintPath>Assets\External\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>Assets\External\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Analytics">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Attributes">
+      <HintPath>Assets\External\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity">
+      <HintPath>Assets\External\Entitas\Entitas.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Migration">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Networking">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Utils">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas">
+      <HintPath>Assets\External\Entitas\Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Serialization">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity">
+      <HintPath>Assets\External\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Migration.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Logging">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.Unity.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Unity.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Gameroom">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookNamedPipeClient">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Editor">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
-      <HintPath>Assets\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -438,25 +436,55 @@
     <Compile Include="Assets\Common\SplashAbout\LoadingScreen.cs" />
     <Compile Include="Assets\Common\TapHandler.cs" />
     <Compile Include="Assets\Common\TrackableSettings.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenTextMeshPro.cs" />
-    <Compile Include="Assets\Entitas\Compile.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppInvites.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+    <Compile Include="Assets\External\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
+    <Compile Include="Assets\External\Demigiant\DOTweenPro\DOTweenTextMeshPro.cs" />
+    <Compile Include="Assets\External\Entitas\Compile.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\LogView.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\MenuBase.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\AppInvites.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
+    <Compile Include="Assets\External\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\GO\Models\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
     <Compile Include="Assets\PSD Logo Templates\Sample\IconPreview.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Design\ToolboxButton.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Design\ResetButton.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Astronaut.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Augmentation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />
@@ -494,8 +522,6 @@
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\PanelShowHide.cs" />
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkHandler.cs" />
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkTrackableEventHandler.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Design\ARCursor.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Design\ARManager.cs" />
     <Compile Include="Assets\Sources\ButtonDownEventDispatcher.cs" />
     <Compile Include="Assets\Sources\CameraGyroscopeAnim.cs" />
     <Compile Include="Assets\Sources\Components\Events\OnGridCreated.cs" />
@@ -525,6 +551,7 @@
     <Compile Include="Assets\Sources\Generated\Game\Components\GameOnSceneLoadComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GamePartComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameResourcesComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameVehiclePartComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameViewComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\GameAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\Game\GameComponentsLookup.cs" />
@@ -545,10 +572,14 @@
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\DesignSceneInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\MenuSceneInstaller.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Loading\LoadingRand.cs" />
     <Compile Include="Assets\Sources\MenuController.cs" />
-    <Compile Include="Assets\Sources\SceneScripts\Menu\MenuIntro.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ARCursor.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ARManager.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ResetButton.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ToolboxButton.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Loading\LoadingRand.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Menu\MenuIntro.cs" />
     <Compile Include="Assets\Sources\SoundController.cs" />
     <Compile Include="Assets\Sources\Systems\ButtonEventHandlingSystem.cs" />
     <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
@@ -560,55 +591,13 @@
     <Compile Include="Assets\Sources\Systems\InputLogSystem.cs" />
     <Compile Include="Assets\Sources\Systems\InputSystem.cs" />
     <Compile Include="Assets\Sources\Systems\SceneManagementSystem.cs" />
+    <Compile Include="Assets\Sources\Systems\ToolboxManagementSystem.cs" />
     <Compile Include="Assets\Sources\Systems\ViewCreation\GameViewCreationSystem.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Sources\Systems\ViewCreation\ToolboxViewCreationSystem.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
-    <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
-    <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
-    <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
-    <None Include="Assets\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
-    <None Include="Assets\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Demigiant\DOTweenPro\DOTweenPro.XML" />
-    <None Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenProEditor.XML" />
-    <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
-    <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
-    <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
-    <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\Emulator\VuforiaEmulator.xml" />
@@ -616,7 +605,39 @@
     <None Include="Assets\Editor\Vuforia\VuforiaMars_ModelTarget\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
     <None Include="Assets\Editor\WebcamProfiles\profiles.xml" />
-    <None Include="Assets\FacebookSDK\link.xml" />
+    <None Include="Assets\External\Demigiant\DOTween\DOTween.XML" />
+    <None Include="Assets\External\Demigiant\DOTween\DOTween43.xml" />
+    <None Include="Assets\External\Demigiant\DOTween\DOTween46.xml" />
+    <None Include="Assets\External\Demigiant\DOTween\DOTween50.xml" />
+    <None Include="Assets\External\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\External\Demigiant\DOTween\readme.txt" />
+    <None Include="Assets\External\Demigiant\DOTweenPro\DOTweenPro.XML" />
+    <None Include="Assets\External\Demigiant\DOTweenPro\Editor\DOTweenProEditor.XML" />
+    <None Include="Assets\External\Demigiant\DOTweenPro\readme.txt" />
+    <None Include="Assets\External\Demigiant\DemiLib\Core\DemiLib.xml" />
+    <None Include="Assets\External\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
+    <None Include="Assets\External\Demigiant\readme_DOTweenPro.txt" />
+    <None Include="Assets\External\FacebookSDK\link.xml" />
+    <None Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+    <None Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Fonts\NotoSans - License.txt" />
+    <None Include="Assets\External\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
+    <None Include="Assets\External\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\External\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\External\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\GO\Models\A_piece_of_nature\Readme.txt" />
     <None Include="Assets\GO\Models\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\PSD Logo Templates\Fonts\Baloo\OFL.txt" />
@@ -637,26 +658,6 @@
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_ModelTarget.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Object_OT.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_VuMark.xml" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\NotoSans - License.txt" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
@@ -666,7 +667,6 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

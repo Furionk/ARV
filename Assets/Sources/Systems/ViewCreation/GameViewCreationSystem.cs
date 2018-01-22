@@ -18,7 +18,7 @@ public class GameViewCreationSystem : ReactiveSystem<GameEntity> {
     }
 
     protected override bool Filter(GameEntity entity) {
-        return true;
+        return !entity.hasVehiclePart;
     }
 
     protected override void Execute(List<GameEntity> entities) {
