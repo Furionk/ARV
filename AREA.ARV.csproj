@@ -455,6 +455,8 @@
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
     <Compile Include="Assets\GO\Models\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
     <Compile Include="Assets\PSD Logo Templates\Sample\IconPreview.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ToolboxButton.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ResetButton.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Astronaut.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Augmentation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />
@@ -492,9 +494,9 @@
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\PanelShowHide.cs" />
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkHandler.cs" />
     <Compile Include="Assets\SamplesResources\VuMark\Scripts\VuMarkTrackableEventHandler.cs" />
-    <Compile Include="Assets\Sources\ARCursor.cs" />
-    <Compile Include="Assets\Sources\ARManager.cs" />
-    <Compile Include="Assets\Sources\ButtonClickedHandler.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ARCursor.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Design\ARManager.cs" />
+    <Compile Include="Assets\Sources\ButtonDownEventDispatcher.cs" />
     <Compile Include="Assets\Sources\CameraGyroscopeAnim.cs" />
     <Compile Include="Assets\Sources\Components\Events\OnGridCreated.cs" />
     <Compile Include="Assets\Sources\Components\Events\OnMenuButtonDownComponent.cs" />
@@ -541,11 +543,14 @@
     <Compile Include="Assets\Sources\Generated\Input\InputMatcher.cs" />
     <Compile Include="Assets\Sources\Installers\ConfigInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
-    <Compile Include="Assets\Sources\LoadingRand.cs" />
+    <Compile Include="Assets\Sources\Installers\DesignSceneInstaller.cs" />
+    <Compile Include="Assets\Sources\Installers\MenuSceneInstaller.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Loading\LoadingRand.cs" />
     <Compile Include="Assets\Sources\MenuController.cs" />
-    <Compile Include="Assets\Sources\MenuIntro.cs" />
+    <Compile Include="Assets\Sources\SceneScripts\Menu\MenuIntro.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
     <Compile Include="Assets\Sources\SoundController.cs" />
+    <Compile Include="Assets\Sources\Systems\ButtonEventHandlingSystem.cs" />
     <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
     <Compile Include="Assets\Sources\Systems\Features\Interaction.cs" />
     <Compile Include="Assets\Sources\Systems\GameInitSystem.cs" />
@@ -554,7 +559,6 @@
     <Compile Include="Assets\Sources\Systems\GridSelectionSystem.cs" />
     <Compile Include="Assets\Sources\Systems\InputLogSystem.cs" />
     <Compile Include="Assets\Sources\Systems\InputSystem.cs" />
-    <Compile Include="Assets\Sources\Systems\MenuButtonHandlingSystem.cs" />
     <Compile Include="Assets\Sources\Systems\SceneManagementSystem.cs" />
     <Compile Include="Assets\Sources\Systems\ViewCreation\GameViewCreationSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -662,6 +666,7 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

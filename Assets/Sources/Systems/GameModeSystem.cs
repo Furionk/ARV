@@ -11,6 +11,9 @@ public class GameModeSystem : ReactiveSystem<GameEntity> {
 
     private GameContext _gameContext;
 
+    [Inject]
+    private DiContainer Container;
+
     public GameModeSystem(GameContext context) : base(context) {
         _gameContext = context;
     }
@@ -31,7 +34,7 @@ public class GameModeSystem : ReactiveSystem<GameEntity> {
         } else if (e.gameMode.gameMode == GameMode.Menu) {
             _gameContext.ReplaceOnSceneLoad("Menu");
         } else if (e.gameMode.gameMode == GameMode.Simulation) {
-            _gameContext.ReplaceOnSceneLoad("Simulation");
+            //_gameContext.ReplaceOnSceneLoad("Simulation");
         }
     }
 

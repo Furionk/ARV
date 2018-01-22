@@ -19,7 +19,7 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<GameInitSystem>().To<GameInitSystem>().AsSingle();
         Container.Bind<GameViewCreationSystem>().To<GameViewCreationSystem>().AsSingle();
         Container.Bind<SceneManagementSystem>().To<SceneManagementSystem>().AsSingle();
-        Container.Bind<MenuButtonHandlingSystem>().To<MenuButtonHandlingSystem>().AsSingle();
+        Container.Bind<ButtonEventHandlingSystem>().To<ButtonEventHandlingSystem>().AsSingle();
         Container.Bind<GameModeSystem>().To<GameModeSystem>().AsSingle();
         Container.Bind<GridPositioningSystem>().To<GridPositioningSystem>().AsSingle();
         Container.Bind<GridSelectionSystem>().To<GridSelectionSystem>().AsSingle();

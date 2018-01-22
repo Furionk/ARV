@@ -40,7 +40,6 @@ public class GridPositioningSystem : ReactiveSystem<GameEntity> {
 
         foreach (var gameEntity in _gameContext.GetEntities(GameMatcher.AllOf(GameMatcher.Grid))) {
             gameEntity.view.view.transform.SetParent(_center.transform);
-            gameEntity.view.view.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             gameEntity.view.view.transform.position = gameEntity.grid.position * offset;
 
             if (!maxX.HasValue || gameEntity.view.view.transform.position.x > maxX)

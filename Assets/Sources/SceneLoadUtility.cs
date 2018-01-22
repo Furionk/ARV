@@ -52,31 +52,20 @@ public class SceneLoadUtility : MonoBehaviour {
     }
 
     public IEnumerator PreProcess(string targetScene) {
-        Debug.Log("[LOAD] PRE process " + targetScene);
+        Debug.Log("[SceneLoadUtility] PRE process " + targetScene);
         if (targetScene == "Design") {
             VuforiaManager.Instance.Init();
             while (!VuforiaManager.Instance.Initialized) {
                 yield return null;
             }
-            Debug.Log("Vuforia Inited");
+            Debug.Log("[SceneLoadUtility] Vuforia Inited");
         }
     }
 
     public void AfterProcess(string targetScene) {
-        Debug.Log("[LOAD] AFT process " + targetScene);
+        Debug.Log("[SceneLoadUtility] AFT process " + targetScene);
         if (targetScene == "Design") {
             _container.InstantiatePrefab(Resources.Load<GameObject>("ARCamera"));
-            //////    for (int i = 0; i < 3; i++) {
-            //////        for (int j = 0; j < 3; j++) {
-            //////            for (int k = 0; k < 3; k++) {
-            //////                var ge = _gameContext.CreateEntity();
-            //////                ge.AddResources("Game/Grid");
-            //////                ge.AddGrid(new Vector3(i, j, k));
-            //////            }
-            //////        }
-            //////    }
-            //////    _gameContext.CreateEntity().AddOnGridCreated(null);
-            //////}
         }
 
     }
