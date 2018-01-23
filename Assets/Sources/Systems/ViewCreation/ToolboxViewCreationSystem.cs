@@ -6,42 +6,43 @@ using Entitas.Unity;
 using UnityEngine.Assertions;
 using Zenject;
 
-public class ToolboxViewCreationSystem : ReactiveSystem<GameEntity> {
+namespace ARV.System {
 
-    private GameContext _gameContext;
+    public class ToolboxViewCreationSystem : ReactiveSystem<GameEntity> {
 
-    private Lazy<MenuController> mMenuController;
+        private GameContext _gameContext;
 
-    public ToolboxViewCreationSystem(GameContext context, Lazy<MenuController> menuControl) : base(context) {
-        _gameContext = context;
-        mMenuController = menuControl;
-    }
+        [InjectOptional(Id = "ToolboxContent")]
+        private Transform toolboxContent;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-        return context.CreateCollector(GameMatcher.VehiclePart);
-    }
-
-    protected override bool Filter(GameEntity entity) {
-        return true;
-    }
-
-    protected override void Execute(List<GameEntity> entities) {
-        foreach (var entity in entities) {
-            string resourceLocation = string.Empty;
-            if (entity.vehiclePart.Name == "Wheel") {
-                resourceLocation = "Game/WheelIcon";
-            } else if (entity.vehiclePart.Name == "WoodBody") {
-                resourceLocation = "Game/WoodbodyIcon";
-            }
-
-            Assert.IsNotNull(mMenuController.Value);
-
-            ////var go = GameObject.Instantiate(Resources.Load(resourceLocation), toolbox.transform) as GameObject;
-            ////go.Link(entity, _gameContext);
-            ////entity.AddView(go);
+        public ToolboxViewCreationSystem(GameContext context) : base(context) {
+            _gameContext = context;
         }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
+            return context.CreateCollector(GameMatcher.VehiclePart);
+        }
+
+        protected override bool Filter(GameEntity entity) {
+            return true;
+        }
+
+        protected override void Execute(List<GameEntity> entities) {
+            foreach (var entity in entities) {
+                string resourceLocation = string.Empty;
+                if (entity.vehiclePart.Name == "Wheel") {
+                    resourceLocation = "Game/WheelIcon";
+                } else if (entity.vehiclePart.Name == "WoodBody") {
+                    resourceLocation = "Game/WoodbodyIcon";
+                }
+
+                Assert.IsNotNull(toolboxContent);
+                var go = GameObject.Instantiate(Resources.Load(resourceLocation), toolboxContent) as GameObject;
+                go.Link(entity, _gameContext);
+                entity.AddView(go);
+            }
+        }
+
     }
-
-
 
 }

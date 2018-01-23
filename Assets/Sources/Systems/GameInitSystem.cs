@@ -3,13 +3,17 @@ using System.Collections;
 using Entitas;
 using Zenject;
 
-public class GameInitSystem : IInitializeSystem { 
+namespace ARV.System {
 
-    [Inject]
-    public GameContext game;
+    public class GameInitSystem : IInitializeSystem {
+
+        [Inject]
+        public GameContext game;
 
 
-    public void Initialize() {
+        public void Initialize() {
+
+        }
 
     }
 

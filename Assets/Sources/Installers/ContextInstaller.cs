@@ -1,6 +1,7 @@
 using Entitas;
 using UnityEngine;
 using Zenject;
+using ARV.System;
 
 public class ContextInstaller : MonoInstaller<ContextInstaller> {
 
@@ -13,18 +14,23 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<InputContext>()
             .FromInstance(Contexts.sharedInstance.input);
 
-        // Systems        
-        Container.Bind<InputSystem>().To<InputSystem>().AsSingle();
-        Container.Bind<InputLogSystem>().To<InputLogSystem>().AsSingle();
-        Container.Bind<GameInitSystem>().To<GameInitSystem>().AsSingle();
-        Container.Bind<GameViewCreationSystem>().To<GameViewCreationSystem>().AsSingle();
-        Container.Bind<SceneManagementSystem>().To<SceneManagementSystem>().AsSingle();
-        Container.Bind<ButtonEventHandlingSystem>().To<ButtonEventHandlingSystem>().AsSingle();
-        Container.Bind<GameModeSystem>().To<GameModeSystem>().AsSingle();
-        Container.Bind<GridPositioningSystem>().To<GridPositioningSystem>().AsSingle();
-        Container.Bind<GridSelectionSystem>().To<GridSelectionSystem>().AsSingle();
-        Container.Bind<ToolboxViewCreationSystem>().To<ToolboxViewCreationSystem>().AsSingle();
-        Container.Bind<ToolboxManagementSystem>().To<ToolboxManagementSystem>().AsSingle();
+        // Systems     
+        Container.Bind<ISystem>().WithId(FeatureType.All).To(o=>o.AllNonAbstractClasses().InNamespace("ARV.System")).AsSingle();
+        //Container.Bind<ISystem>().WithId("All").To(x => x.AllTypes().DerivingFrom<IExecuteSystem>());
+
+        Container.Bind<ISystem>().WithId(FeatureType.Interaction).To<InputSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.Interaction).To<InputLogSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.Interaction).To<ButtonEventHandlingSystem>().AsSingle();
+
+
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GameInitSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GameViewCreationSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<SceneManagementSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GameModeSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GridPositioningSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GridSelectionSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<ToolboxViewCreationSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<ToolboxManagementSystem>().AsSingle();
 
         // Features
         Container.Bind<Feature>().To<GameFlow>().AsSingle();

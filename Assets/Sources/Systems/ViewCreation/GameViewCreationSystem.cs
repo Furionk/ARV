@@ -5,30 +5,34 @@ using Entitas;
 using Entitas.Unity;
 using Zenject;
 
-public class GameViewCreationSystem : ReactiveSystem<GameEntity> {
+namespace ARV.System {
 
-    private GameContext _gameContext;
+    public class GameViewCreationSystem : ReactiveSystem<GameEntity> {
 
-    public GameViewCreationSystem(GameContext context) : base(context) {
-        _gameContext = context;
-    }
+        private GameContext _gameContext;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-        return context.CreateCollector(GameMatcher.Resources);
-    }
-
-    protected override bool Filter(GameEntity entity) {
-        return !entity.hasVehiclePart;
-    }
-
-    protected override void Execute(List<GameEntity> entities) {
-        foreach (var entity in entities) {
-            var go = GameObject.Instantiate(Resources.Load(entity.resources.prefabPath)) as GameObject;
-            go.Link(entity, _gameContext);
-            entity.AddView(go);
+        public GameViewCreationSystem(GameContext context) : base(context) {
+            _gameContext = context;
         }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
+            return context.CreateCollector(GameMatcher.Resources);
+        }
+
+        protected override bool Filter(GameEntity entity) {
+            return !entity.hasVehiclePart;
+        }
+
+        protected override void Execute(List<GameEntity> entities) {
+            foreach (var entity in entities) {
+                var go = GameObject.Instantiate(Resources.Load(entity.resources.prefabPath)) as GameObject;
+                go.Link(entity, _gameContext);
+                entity.AddView(go);
+            }
+        }
+
+
+
     }
-
-
 
 }

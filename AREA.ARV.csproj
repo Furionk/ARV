@@ -295,6 +295,117 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Assets\External\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiEditor">
+      <HintPath>Assets\External\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\External\Demigiant\DOTween\DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets\External\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>Assets\External\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+      <HintPath>Assets\External\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Logging">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Networking">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Serialization">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Utils">
+      <HintPath>Assets\External\Entitas\DesperateDevs.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Attributes">
+      <HintPath>Assets\External\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas">
+      <HintPath>Assets\External\Entitas\Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity">
+      <HintPath>Assets\External\Entitas\Entitas.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity">
+      <HintPath>Assets\External\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Analytics">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.CodeGeneration.Unity.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Unity.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Migration">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Migration.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.CodeGeneration.Plugins">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.CodeGeneration.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity.Editor">
+      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Editor">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Gameroom">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookNamedPipeClient">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Assets\External\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
+      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Google.IOSResolver">
       <HintPath>Assets\PlayServicesResolver\Editor\Google.IOSResolver.dll</HintPath>
     </Reference>
@@ -306,117 +417,6 @@
     </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\PlayServicesResolver\Editor\Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets\External\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>Assets\External\Demigiant\DOTween\DOTween46.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>Assets\External\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween50">
-      <HintPath>Assets\External\Demigiant\DOTween\DOTween50.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>Assets\External\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>Assets\External\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween43">
-      <HintPath>Assets\External\Demigiant\DOTween\DOTween43.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>Assets\External\Demigiant\DOTween\DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>Assets\External\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Unity.Editor">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Analytics">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.CodeGeneration.Attributes">
-      <HintPath>Assets\External\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity">
-      <HintPath>Assets\External\Entitas\Entitas.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Migration">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Networking">
-      <HintPath>Assets\External\Entitas\DesperateDevs.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity.Editor">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity.Editor">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.CodeGenerator">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.CodeGenerator.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.CodeGeneration.Plugins">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Utils">
-      <HintPath>Assets\External\Entitas\DesperateDevs.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.Plugins">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas">
-      <HintPath>Assets\External\Entitas\Entitas.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Serialization">
-      <HintPath>Assets\External\Entitas\DesperateDevs.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity">
-      <HintPath>Assets\External\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.CodeGeneration.Plugins">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.VisualDebugging.CodeGeneration.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Migration.Unity.Editor">
-      <HintPath>Assets\External\Entitas\Editor\Entitas.Migration.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.Logging">
-      <HintPath>Assets\External\Entitas\DesperateDevs.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="DesperateDevs.CodeGeneration.Unity.Plugins">
-      <HintPath>Assets\External\Entitas\Editor\DesperateDevs.CodeGeneration.Unity.Plugins.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Gameroom">
-      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
-    </Reference>
-    <Reference Include="FacebookNamedPipeClient">
-      <HintPath>Assets\External\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity">
-      <HintPath>Assets\External\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Editor">
-      <HintPath>Assets\External\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Assets\External\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
-      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
-      <HintPath>Assets\External\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -571,6 +571,7 @@
     <Compile Include="Assets\Sources\Installers\ConfigInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\DesignSceneInstaller.cs" />
+    <Compile Include="Assets\Sources\Installers\Features.cs" />
     <Compile Include="Assets\Sources\Installers\MenuSceneInstaller.cs" />
     <Compile Include="Assets\Sources\MenuController.cs" />
     <Compile Include="Assets\Sources\SceneLoadUtility.cs" />
@@ -582,8 +583,6 @@
     <Compile Include="Assets\Sources\SceneScripts\Menu\MenuIntro.cs" />
     <Compile Include="Assets\Sources\SoundController.cs" />
     <Compile Include="Assets\Sources\Systems\ButtonEventHandlingSystem.cs" />
-    <Compile Include="Assets\Sources\Systems\Features\GameFlow.cs" />
-    <Compile Include="Assets\Sources\Systems\Features\Interaction.cs" />
     <Compile Include="Assets\Sources\Systems\GameInitSystem.cs" />
     <Compile Include="Assets\Sources\Systems\GameModeSystem.cs" />
     <Compile Include="Assets\Sources\Systems\GridPositioningSystem.cs" />

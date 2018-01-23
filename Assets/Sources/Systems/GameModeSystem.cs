@@ -7,35 +7,39 @@ using Entitas;
 using Vuforia;
 using Zenject;
 
-public class GameModeSystem : ReactiveSystem<GameEntity> {
+namespace ARV.System {
 
-    private GameContext _gameContext;
+    public class GameModeSystem : ReactiveSystem<GameEntity> {
 
-    [Inject]
-    private DiContainer Container;
+        private GameContext _gameContext;
 
-    public GameModeSystem(GameContext context) : base(context) {
-        _gameContext = context;
-    }
+        [Inject]
+        private DiContainer Container;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-        return context.CreateCollector(GameMatcher.GameMode);
-    }
-
-    protected override bool Filter(GameEntity entity) {
-        return true;
-    }
-
-    protected override void Execute(List<GameEntity> entities) {
-        var e = entities.FirstOrDefault();
-        Debug.Log("[R] Game Mode Changed " + e.gameMode.gameMode.ToString());
-        if (e.gameMode.gameMode == GameMode.Design) {
-            _gameContext.ReplaceOnSceneLoad("Design");
-        } else if (e.gameMode.gameMode == GameMode.Menu) {
-            _gameContext.ReplaceOnSceneLoad("Menu");
-        } else if (e.gameMode.gameMode == GameMode.Simulation) {
-            //_gameContext.ReplaceOnSceneLoad("Simulation");
+        public GameModeSystem(GameContext context) : base(context) {
+            _gameContext = context;
         }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
+            return context.CreateCollector(GameMatcher.GameMode);
+        }
+
+        protected override bool Filter(GameEntity entity) {
+            return true;
+        }
+
+        protected override void Execute(List<GameEntity> entities) {
+            var e = entities.FirstOrDefault();
+            Debug.Log("[R] Game Mode Changed " + e.gameMode.gameMode.ToString());
+            if (e.gameMode.gameMode == GameMode.Design) {
+                _gameContext.ReplaceOnSceneLoad("Design");
+            } else if (e.gameMode.gameMode == GameMode.Menu) {
+                _gameContext.ReplaceOnSceneLoad("Menu");
+            } else if (e.gameMode.gameMode == GameMode.Simulation) {
+                //_gameContext.ReplaceOnSceneLoad("Simulation");
+            }
+        }
+
     }
 
 }

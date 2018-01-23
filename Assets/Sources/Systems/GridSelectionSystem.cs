@@ -8,34 +8,38 @@ using Entitas.Unity;
 using Vuforia;
 using Zenject;
 
-public class GridSelectionSystem : ReactiveSystem<GameEntity> {
+namespace ARV.System {
 
-    private GameContext _gameContext;
-    private Material _mSelected;
-    private Material _mUnselected;
+    public class GridSelectionSystem : ReactiveSystem<GameEntity> {
 
-    public GridSelectionSystem(GameContext context) : base(context) {
-        _gameContext = context;
-        _mUnselected = Resources.Load<Material>("Game/Grid Unselected");
-        _mSelected = Resources.Load<Material>("Game/Grid Selected");
-    }
+        private GameContext _gameContext;
+        private Material _mSelected;
+        private Material _mUnselected;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-        return context.CreateCollector(GameMatcher.IsSelected.AddedOrRemoved());
-    }
+        public GridSelectionSystem(GameContext context) : base(context) {
+            _gameContext = context;
+            _mUnselected = Resources.Load<Material>("Game/Grid Unselected");
+            _mSelected = Resources.Load<Material>("Game/Grid Selected");
+        }
 
-    protected override bool Filter(GameEntity entity) {
-        return entity.hasGrid && entity.hasView;
-    }
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
+            return context.CreateCollector(GameMatcher.IsSelected.AddedOrRemoved());
+        }
 
-    protected override void Execute(List<GameEntity> entities) {
-        foreach (var gameEntity in entities) {
-            if (gameEntity.hasIsSelected) {
-                gameEntity.view.view.GetComponent<MeshRenderer>().material = _mSelected;
-            } else {
-                gameEntity.view.view.GetComponent<MeshRenderer>().material = _mUnselected;
+        protected override bool Filter(GameEntity entity) {
+            return entity.hasGrid && entity.hasView;
+        }
+
+        protected override void Execute(List<GameEntity> entities) {
+            foreach (var gameEntity in entities) {
+                if (gameEntity.hasIsSelected) {
+                    gameEntity.view.view.GetComponent<MeshRenderer>().material = _mSelected;
+                } else {
+                    gameEntity.view.view.GetComponent<MeshRenderer>().material = _mUnselected;
+                }
             }
         }
+
     }
 
 }

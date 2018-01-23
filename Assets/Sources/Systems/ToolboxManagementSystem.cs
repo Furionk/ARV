@@ -7,26 +7,30 @@ using Entitas;
 using Vuforia;
 using Zenject;
 
-public class ToolboxManagementSystem : ReactiveSystem<GameEntity> {
+namespace ARV.System {
 
-    private GameContext _gameContext;
+    public class ToolboxManagementSystem : ReactiveSystem<GameEntity> {
 
-    public ToolboxManagementSystem(GameContext context) : base(context) {
-        _gameContext = context;
-    }
+        private GameContext _gameContext;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-        return context.CreateCollector(GameMatcher.VehiclePart);
-    }
-
-    protected override bool Filter(GameEntity entity) {
-        return true;
-    }
-
-    protected override void Execute(List<GameEntity> entities) {
-        foreach (var gameEntity in entities) {
-            
+        public ToolboxManagementSystem(GameContext context) : base(context) {
+            _gameContext = context;
         }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
+            return context.CreateCollector(GameMatcher.VehiclePart);
+        }
+
+        protected override bool Filter(GameEntity entity) {
+            return true;
+        }
+
+        protected override void Execute(List<GameEntity> entities) {
+            foreach (var gameEntity in entities) {
+
+            }
+        }
+
     }
 
 }

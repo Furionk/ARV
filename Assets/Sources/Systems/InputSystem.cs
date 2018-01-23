@@ -3,20 +3,23 @@ using System.Collections;
 using Entitas;
 using Zenject;
 
-public class InputSystem : IExecuteSystem {
+namespace ARV.System {
 
-    private InputContext _inputContext;
+    public class InputSystem : IExecuteSystem {
 
-    public InputSystem(InputContext inputContext) {
-        _inputContext = inputContext;
-    }
+        private InputContext _inputContext;
 
-    public void Execute() {
-
-        if (Input.anyKey) {
-            _inputContext.CreateEntity()
-                .AddOnMouseDown(Input.mousePosition.x, Input.mousePosition.y);
+        public InputSystem(InputContext inputContext) {
+            _inputContext = inputContext;
         }
+
+        public void Execute() {
+
+            if (Input.anyKey) {
+                _inputContext.CreateEntity().AddOnMouseDown(Input.mousePosition.x, Input.mousePosition.y);
+            }
+        }
+
     }
 
 }
