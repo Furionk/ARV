@@ -49,7 +49,6 @@ namespace ARV.System {
                 } else if (buttonId == "simulate") {
                     _gameContext.CreateEntity().AddGameMode(GameMode.Simulation);
                 } else if (buttonId == "reset") {
-                    // TODO : wait for optimize
                     ARManager.Reset();
                 } else if (buttonId == "toolbox") {
                     MenuController.TogglePanel("pnl_toolbox");

@@ -35,7 +35,6 @@ namespace ARV.System {
                 } else if (entity.vehiclePart.Name == "WoodBody") {
                     resourceLocation = "Game/WoodbodyIcon";
                 }
-
                 Assert.IsNotNull(toolboxContent);
                 var go = GameObject.Instantiate(Resources.Load(resourceLocation), toolboxContent) as GameObject;
                 go.Link(entity, _gameContext);
