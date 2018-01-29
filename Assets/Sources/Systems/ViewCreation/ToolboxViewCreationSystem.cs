@@ -20,7 +20,7 @@ namespace ARV.System {
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-            return context.CreateCollector(GameMatcher.VehiclePart);
+            return context.CreateCollector(GameMatcher.VehicleTool);
         }
 
         protected override bool Filter(GameEntity entity) {
@@ -30,9 +30,9 @@ namespace ARV.System {
         protected override void Execute(List<GameEntity> entities) {
             foreach (var entity in entities) {
                 string resourceLocation = string.Empty;
-                if (entity.vehiclePart.Name == "Wheel") {
+                if (entity.vehicleTool.Type == VehicleTool.Wheel) {
                     resourceLocation = "Game/WheelIcon";
-                } else if (entity.vehiclePart.Name == "WoodBody") {
+                } else if (entity.vehicleTool.Type == VehicleTool.WoodBody) {
                     resourceLocation = "Game/WoodbodyIcon";
                 }
                 Assert.IsNotNull(toolboxContent);

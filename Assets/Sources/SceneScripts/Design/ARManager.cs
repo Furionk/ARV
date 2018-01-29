@@ -19,6 +19,9 @@ public class ARManager : MonoBehaviour {
     [Inject]
     private GameContext _gameContext;
 
+    [Inject(Id = "ARFunctionBar")]
+    private Transform _arFunctionBar;
+
     private bool logging = false;
 
     #region PUBLIC_MEMBERS
@@ -178,6 +181,7 @@ public class ARManager : MonoBehaviour {
             }
             arAreaInitialized = true;
         }
+        _arFunctionBar.gameObject.SetActive(true);
         _gameContext.CreateEntity().AddOnGridCreated(null);
         SetSurfaceIndicatorVisible(false);
     }

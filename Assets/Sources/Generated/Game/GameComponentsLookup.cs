@@ -16,7 +16,7 @@ public static class GameComponentsLookup {
     public const int OnSceneLoad = 5;
     public const int Part = 6;
     public const int Resources = 7;
-    public const int VehiclePart = 8;
+    public const int VehicleTool = 8;
     public const int View = 9;
 
     public const int TotalComponents = 10;
@@ -30,7 +30,7 @@ public static class GameComponentsLookup {
         "OnSceneLoad",
         "Part",
         "Resources",
-        "VehiclePart",
+        "VehicleTool",
         "View"
     };
 
@@ -43,7 +43,7 @@ public static class GameComponentsLookup {
         typeof(OnSceneLoadComponent),
         typeof(PartComponent),
         typeof(ResourcesComponent),
-        typeof(VehiclePartComponent),
+        typeof(VehicleToolComponent),
         typeof(ViewComponent)
     };
 }

@@ -3577,6 +3577,7 @@ MonoBehaviour:
   m_MenuController: {fileID: 1549438292}
   m_ToolboxContent: {fileID: 1371232563}
   m_PlaceToolButton: {fileID: 695970250}
+  m_ARFunctionBar: {fileID: 0}
 --- !u!1 &2007981807
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ namespace ARV.System {
         }
 
         protected override bool Filter(GameEntity entity) {
-            return !entity.hasVehiclePart;
+            return !entity.hasVehicleTool;
         }
 
         protected override void Execute(List<GameEntity> entities) {

@@ -18,7 +18,7 @@ namespace ARV.System {
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
-            return context.CreateCollector(GameMatcher.VehiclePart);
+            return context.CreateCollector(GameMatcher.VehicleTool);
         }
 
         protected override bool Filter(GameEntity entity) {

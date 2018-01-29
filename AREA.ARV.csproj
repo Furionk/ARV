@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,7 +12,6 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>iOS:9</UnityBuildTarget>
@@ -420,6 +419,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameOnSceneLoadComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameGameModeComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameOnGridCreatedComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\Components\InputOnMenuButtonDownComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\Components\InputOnMouseDownComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameGridComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\Components\InputIdComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameIdComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameIsSelectedComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GamePartComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\Components\InputResourcesComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameResourcesComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameVehicleToolComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\Components\InputViewComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameViewComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IId.cs" />
+    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IResources.cs" />
+    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IView.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\GameComponentsLookup.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\InputComponentsLookup.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\GameAttribute.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\InputAttribute.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\GameContext.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\InputContext.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\GameMatcher.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\InputMatcher.cs" />
+    <Compile Include="Assets\Sources\Generated\Contexts.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\GameEntity.cs" />
+    <Compile Include="Assets\Sources\Generated\Input\InputEntity.cs" />
+    <Compile Include="Assets\Sources\Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="AREA.ARV.Plugins.csproj">
       <Project>{FE48EA9F-D6CC-51FD-B835-51C2F7C9A939}</Project>
       <Name>AREA.ARV.Plugins</Name>
@@ -534,40 +565,10 @@
     <Compile Include="Assets\Sources\Components\IsSelectedComponent.cs" />
     <Compile Include="Assets\Sources\Components\PartComponent.cs" />
     <Compile Include="Assets\Sources\Components\ResourcesComponent.cs" />
-    <Compile Include="Assets\Sources\Components\VehiclePartComponent.cs" />
+    <Compile Include="Assets\Sources\Components\VehicleToolComponent.cs" />
     <Compile Include="Assets\Sources\Components\ViewComponent.cs" />
     <Compile Include="Assets\Sources\FBScripts.cs" />
     <Compile Include="Assets\Sources\GameController.cs" />
-    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IId.cs" />
-    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IResources.cs" />
-    <Compile Include="Assets\Sources\Generated\Components\Interfaces\IView.cs" />
-    <Compile Include="Assets\Sources\Generated\Contexts.cs" />
-    <Compile Include="Assets\Sources\Generated\Feature.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameGameModeComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameGridComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameIdComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameIsSelectedComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameOnGridCreatedComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameOnSceneLoadComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GamePartComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameResourcesComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameVehiclePartComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GameViewComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\GameAttribute.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\GameComponentsLookup.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\GameContext.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\GameEntity.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\GameMatcher.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\Components\InputIdComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\Components\InputOnMenuButtonDownComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\Components\InputOnMouseDownComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\Components\InputResourcesComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\Components\InputViewComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\InputAttribute.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\InputComponentsLookup.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\InputContext.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\InputEntity.cs" />
-    <Compile Include="Assets\Sources\Generated\Input\InputMatcher.cs" />
     <Compile Include="Assets\Sources\Installers\ConfigInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\ContextInstaller.cs" />
     <Compile Include="Assets\Sources\Installers\DesignSceneInstaller.cs" />
