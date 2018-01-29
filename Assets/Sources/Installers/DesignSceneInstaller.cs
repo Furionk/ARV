@@ -28,6 +28,7 @@ public class DesignSceneInstaller : MonoInstaller<DesignSceneInstaller> {
         }
 
         Container.InstantiatePrefab(Resources.Load<GameObject>("ARCamera"));
+
         gameContext.CreateEntity().AddVehicleTool(VehicleTool.Wheel);
         gameContext.CreateEntity().AddVehicleTool(VehicleTool.Wheel);
         gameContext.CreateEntity().AddVehicleTool(VehicleTool.Wheel);

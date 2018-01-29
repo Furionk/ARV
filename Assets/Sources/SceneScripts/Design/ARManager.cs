@@ -89,7 +89,6 @@ public class ARManager : MonoBehaviour {
         //////    }
         //////}
 
-
         if (arAreaConfirmed)
             return;
 
