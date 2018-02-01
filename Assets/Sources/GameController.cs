@@ -25,10 +25,8 @@ public class GameController : MonoBehaviour {
 
     [Inject]
     public void Reject() {
-        //Zenject.ProjectContext.Instance.Container.Inject(_systems);
-        
+        //Zenject.ProjectContext.Instance.Container.Inject(_systems);        
     }
-
 
     void Awake() {
         Instance = this;
@@ -43,7 +41,6 @@ public class GameController : MonoBehaviour {
                 context.OnEntityCreated += AddId;
             }
         }
-
 
         _systems = new Feature("Root Systems");
         foreach (var feature in features) {

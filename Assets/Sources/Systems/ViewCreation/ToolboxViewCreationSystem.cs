@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Entitas;
 using Entitas.Unity;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using Zenject;
 
 namespace ARV.System {
@@ -12,11 +14,18 @@ namespace ARV.System {
 
         private GameContext _gameContext;
 
+        private int _selectedTool = -1;
+
         [InjectOptional(Id = "ToolboxContent")]
-        private Transform toolboxContent;
+        private Transform toolboxTransfrom;
+
+        [Inject]
+        private DiContainer Container;
+        private IGroup<GameEntity> _gSelectedVehicleTool;
 
         public ToolboxViewCreationSystem(GameContext context) : base(context) {
             _gameContext = context;
+            _gSelectedVehicleTool = _gameContext.GetGroup(GameMatcher.AllOf(GameMatcher.VehicleTool, GameMatcher.IsSelected));
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {
@@ -29,17 +38,27 @@ namespace ARV.System {
 
         protected override void Execute(List<GameEntity> entities) {
             foreach (var entity in entities) {
-                string resourceLocation = string.Empty;
+                string targetIcon = string.Empty;
+                Assert.IsNotNull(toolboxTransfrom);
+                var go = Container.InstantiatePrefabResource("Game/ToolIcon", toolboxTransfrom);
                 if (entity.vehicleTool.Type == VehicleTool.Wheel) {
-                    resourceLocation = "Game/WheelIcon";
+                    targetIcon = "Icon/wheel";
                 } else if (entity.vehicleTool.Type == VehicleTool.WoodBody) {
-                    resourceLocation = "Game/WoodbodyIcon";
+                    targetIcon = "Icon/woodenbox";
                 }
-                Assert.IsNotNull(toolboxContent);
-                var go = GameObject.Instantiate(Resources.Load(resourceLocation), toolboxContent) as GameObject;
+                Assert.IsNotNull(targetIcon);
+                go.GetComponent<Image>().overrideSprite = Resources.Load<Sprite>(targetIcon);
+                go.GetComponent<Button>().onClick.AddListener(() => OnToolboxButtonClick(entity));
                 go.Link(entity, _gameContext);
                 entity.AddView(go);
             }
+        }
+
+        public void OnToolboxButtonClick(GameEntity selectedGameEntity) {
+            foreach (var gameEntity in _gSelectedVehicleTool.GetEntities()) {
+                gameEntity.RemoveIsSelected();
+            }
+            selectedGameEntity.AddIsSelected(0);
         }
 
     }

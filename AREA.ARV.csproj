@@ -532,9 +532,10 @@
     <Compile Include="Assets\Sources\Components\GridComponent.cs" />
     <Compile Include="Assets\Sources\Components\IdComponent.cs" />
     <Compile Include="Assets\Sources\Components\IsSelectedComponent.cs" />
-    <Compile Include="Assets\Sources\Components\PartComponent.cs" />
     <Compile Include="Assets\Sources\Components\ResourcesComponent.cs" />
     <Compile Include="Assets\Sources\Components\VehicleToolComponent.cs" />
+    <Compile Include="Assets\Sources\Components\VehicleToolPhysicsObject.cs" />
+    <Compile Include="Assets\Sources\Components\VehicleToolPhysicsView.cs" />
     <Compile Include="Assets\Sources\Components\ViewComponent.cs" />
     <Compile Include="Assets\Sources\FBScripts.cs" />
     <Compile Include="Assets\Sources\GameController.cs" />
@@ -549,9 +550,10 @@
     <Compile Include="Assets\Sources\Generated\Game\Components\GameIsSelectedComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameOnGridCreatedComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameOnSceneLoadComponent.cs" />
-    <Compile Include="Assets\Sources\Generated\Game\Components\GamePartComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameResourcesComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameVehicleToolComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameVehicleToolPhysicsObjectComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\Game\Components\GameVehicleToolPhysicsViewComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\Components\GameViewComponent.cs" />
     <Compile Include="Assets\Sources\Generated\Game\GameAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\Game\GameComponentsLookup.cs" />
@@ -592,6 +594,7 @@
     <Compile Include="Assets\Sources\Systems\SceneManagementSystem.cs" />
     <Compile Include="Assets\Sources\Systems\ToolboxManagementSystem.cs" />
     <Compile Include="Assets\Sources\Systems\ViewCreation\GameViewCreationSystem.cs" />
+    <Compile Include="Assets\Sources\Systems\ViewCreation\GridPhysicsObjectCreationSystem.cs" />
     <Compile Include="Assets\Sources\Systems\ViewCreation\ToolboxViewCreationSystem.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />

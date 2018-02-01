@@ -14,12 +14,13 @@ public static class GameComponentsLookup {
     public const int IsSelected = 3;
     public const int OnGridCreated = 4;
     public const int OnSceneLoad = 5;
-    public const int Part = 6;
-    public const int Resources = 7;
-    public const int VehicleTool = 8;
-    public const int View = 9;
+    public const int Resources = 6;
+    public const int VehicleTool = 7;
+    public const int VehicleToolPhysicsObject = 8;
+    public const int VehicleToolPhysicsView = 9;
+    public const int View = 10;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "GameMode",
@@ -28,9 +29,10 @@ public static class GameComponentsLookup {
         "IsSelected",
         "OnGridCreated",
         "OnSceneLoad",
-        "Part",
         "Resources",
         "VehicleTool",
+        "VehicleToolPhysicsObject",
+        "VehicleToolPhysicsView",
         "View"
     };
 
@@ -41,9 +43,10 @@ public static class GameComponentsLookup {
         typeof(IsSelectedComponent),
         typeof(OnGridCreatedComponent),
         typeof(OnSceneLoadComponent),
-        typeof(PartComponent),
         typeof(ResourcesComponent),
         typeof(VehicleToolComponent),
+        typeof(VehicleToolPhysicsObjectComponent),
+        typeof(VehicleToolPhysicsViewComponent),
         typeof(ViewComponent)
     };
 }

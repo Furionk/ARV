@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4316894233261358}
   - component: {fileID: 114525472167799966}
-  - component: {fileID: 114766962112801056}
   m_Layer: 0
   m_Name: ARManager
   m_TagString: Untagged
@@ -140,22 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnchorStage: {fileID: 0}
---- !u!114 &114766962112801056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376361269221060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 114525472167799966}
-  _identifier: 
-  _context: {fileID: 0}
-  _bindType: 0
 --- !u!114 &114933396275640100
 MonoBehaviour:
   m_ObjectHideFlags: 1

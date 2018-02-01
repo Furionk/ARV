@@ -53,17 +53,12 @@ public class ARCursor : MonoBehaviour {
 
             Vector3 disToTarget = hitInfo[finalHitIndex].transform.position - cameraPosition;
             Collider[] insideInfo = Physics.OverlapSphere(hitRay.origin, disToTarget.sqrMagnitude, _gridLayerMask);
-            //RaycastHit[] insideInfo = Physics.SphereCastAll(hitRay, disToTarget.sqrMagnitude, 100, _gridLayerMask);
-            //RaycastHit[] insideInfo = Physics.BoxCastAll(hitRay.origin, (disToTarget / 2), hitRay.direction, Quaternion.identity, 100, _gridLayerMask);
-            //Gizmos.DrawCube(hitRay.origin, disToTarget/2);
             if (insideInfo.Length > 0) {
                 Debug.Log("HIT" + insideInfo.Length);
                 for (int i = 0;
                     i < insideInfo.Length;
                     i++) {
                     int index = insideInfo[i].transform.gameObject.GetEntityLink().entity.creationIndex;
-
-                    //_gameContext.GetEntityWithId(index).add
                 }
             }
 

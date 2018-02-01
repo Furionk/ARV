@@ -31,6 +31,8 @@ public class ContextInstaller : MonoInstaller<ContextInstaller> {
         Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GridSelectionSystem>().AsSingle();
         Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<ToolboxViewCreationSystem>().AsSingle();
         Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<ToolboxManagementSystem>().AsSingle();
+        Container.Bind<ISystem>().WithId(FeatureType.GameFlow).To<GridPhysicsObjectCreationSystem>().AsSingle();
+       
 
         // Features
         Container.Bind<Feature>().To<GameFlow>().AsSingle();

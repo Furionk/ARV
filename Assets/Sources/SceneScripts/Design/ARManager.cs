@@ -160,6 +160,7 @@ public class ARManager : MonoBehaviour {
         m_ARArea.transform.localEulerAngles = Vector3.zero;
         m_ARArea.SetActive(false);
         m_confirmButton.SetActive(false);
+        _arFunctionBar.gameObject.SetActive(false);
         arAreaConfirmed = false;
     }
 
